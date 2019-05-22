@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.car_insurance.mapper.UsersMapper">
+
+    <select id="selectAllUsers" resultType="com.car_insurance.entity.Users">
+        select * from users
+    </select>
+
+    <insert id="addUser" parameterType="com.car_insurance.entity.Users">
+        insert into users (`user`,`password`) values (#{user},#{password})
+    </insert>
+
+    <update id="alertUser" parameterType="com.car_insurance.entity.Users">
+        update users set user=#{user},password=#{password} where id=#{id}
+    </update>
+</mapper>
