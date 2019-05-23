@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: car_insurance
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: acer
+Implementation-Vendor-Id: com.car_insurance
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_66
+Main-Class: ${start-class}
+
