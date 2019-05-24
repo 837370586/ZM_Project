@@ -5,8 +5,6 @@ import java.util.Date;
 public class Recognizee {
     private Integer recognizeeId;
 
-    private Integer customerNum;
-
     private String recognizeeIdcard;
 
     private String name;
@@ -17,9 +15,9 @@ public class Recognizee {
 
     private String phone;
 
-    private String address;
+    private Integer applicantId;
 
-    private String applicantIdcard;
+    private String address;
 
     private String carid;
 
@@ -37,16 +35,15 @@ public class Recognizee {
 
     private Date recognizee;
 
-    public Recognizee(Integer recognizeeId, Integer customerNum, String recognizeeIdcard, String name, Integer age, String sex, String phone, String address, String applicantIdcard, String carid, String carCategory, String engine, String vin, Integer insuranceId, String policynumber, String carOwner, Date recognizee) {
+    public Recognizee(Integer recognizeeId, String recognizeeIdcard, String name, Integer age, String sex, String phone, Integer applicantId, String address, String carid, String carCategory, String engine, String vin, Integer insuranceId, String policynumber, String carOwner, Date recognizee) {
         this.recognizeeId = recognizeeId;
-        this.customerNum = customerNum;
         this.recognizeeIdcard = recognizeeIdcard;
         this.name = name;
         this.age = age;
         this.sex = sex;
         this.phone = phone;
+        this.applicantId = applicantId;
         this.address = address;
-        this.applicantIdcard = applicantIdcard;
         this.carid = carid;
         this.carCategory = carCategory;
         this.engine = engine;
@@ -67,14 +64,6 @@ public class Recognizee {
 
     public void setRecognizeeId(Integer recognizeeId) {
         this.recognizeeId = recognizeeId;
-    }
-
-    public Integer getCustomerNum() {
-        return customerNum;
-    }
-
-    public void setCustomerNum(Integer customerNum) {
-        this.customerNum = customerNum;
     }
 
     public String getRecognizeeIdcard() {
@@ -117,20 +106,20 @@ public class Recognizee {
         this.phone = phone == null ? null : phone.trim();
     }
 
+    public Integer getApplicantId() {
+        return applicantId;
+    }
+
+    public void setApplicantId(Integer applicantId) {
+        this.applicantId = applicantId;
+    }
+
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
-    }
-
-    public String getApplicantIdcard() {
-        return applicantIdcard;
-    }
-
-    public void setApplicantIdcard(String applicantIdcard) {
-        this.applicantIdcard = applicantIdcard == null ? null : applicantIdcard.trim();
     }
 
     public String getCarid() {

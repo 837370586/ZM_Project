@@ -5,8 +5,6 @@ import java.util.Date;
 public class Applicant {
     private Integer applicantId;
 
-    private Integer customerNum;
-
     private String applicantIdcard;
 
     private String applicantName;
@@ -21,9 +19,8 @@ public class Applicant {
 
     private Date applicantTime;
 
-    public Applicant(Integer applicantId, Integer customerNum, String applicantIdcard, String applicantName, Integer age, String applicantPhone, String sex, String address, Date applicantTime) {
+    public Applicant(Integer applicantId, String applicantIdcard, String applicantName, Integer age, String applicantPhone, String sex, String address, Date applicantTime) {
         this.applicantId = applicantId;
-        this.customerNum = customerNum;
         this.applicantIdcard = applicantIdcard;
         this.applicantName = applicantName;
         this.age = age;
@@ -43,14 +40,6 @@ public class Applicant {
 
     public void setApplicantId(Integer applicantId) {
         this.applicantId = applicantId;
-    }
-
-    public Integer getCustomerNum() {
-        return customerNum;
-    }
-
-    public void setCustomerNum(Integer customerNum) {
-        this.customerNum = customerNum;
     }
 
     public String getApplicantIdcard() {

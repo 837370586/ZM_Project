@@ -5,12 +5,9 @@ public class Role {
 
     private String roleName;
 
-    private String qwe;
-
-    public Role(Integer roleId, String roleName, String qwe) {
+    public Role(Integer roleId, String roleName) {
         this.roleId = roleId;
         this.roleName = roleName;
-        this.qwe = qwe;
     }
 
     public Role() {
@@ -31,13 +28,5 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
-    }
-
-    public String getQwe() {
-        return qwe;
-    }
-
-    public void setQwe(String qwe) {
-        this.qwe = qwe == null ? null : qwe.trim();
     }
 }

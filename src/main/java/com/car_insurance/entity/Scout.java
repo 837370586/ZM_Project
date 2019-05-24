@@ -7,18 +7,27 @@ public class Scout {
 
     private Integer scoutNum;
 
-    private String scoutName;
-
-    private Integer filialeNum;
-
     private Date scoutTime;
 
-    public Scout(Integer scoutId, Integer scoutNum, String scoutName, Integer filialeNum, Date scoutTime) {
+    private Integer accidentTypeId;
+
+    private String accidentPhoto;
+
+    private Integer recognizeeId;
+
+    private String lossSituation;
+
+    private String responsibilityJudgment;
+
+    public Scout(Integer scoutId, Integer scoutNum, Date scoutTime, Integer accidentTypeId, String accidentPhoto, Integer recognizeeId, String lossSituation, String responsibilityJudgment) {
         this.scoutId = scoutId;
         this.scoutNum = scoutNum;
-        this.scoutName = scoutName;
-        this.filialeNum = filialeNum;
         this.scoutTime = scoutTime;
+        this.accidentTypeId = accidentTypeId;
+        this.accidentPhoto = accidentPhoto;
+        this.recognizeeId = recognizeeId;
+        this.lossSituation = lossSituation;
+        this.responsibilityJudgment = responsibilityJudgment;
     }
 
     public Scout() {
@@ -41,27 +50,51 @@ public class Scout {
         this.scoutNum = scoutNum;
     }
 
-    public String getScoutName() {
-        return scoutName;
-    }
-
-    public void setScoutName(String scoutName) {
-        this.scoutName = scoutName == null ? null : scoutName.trim();
-    }
-
-    public Integer getFilialeNum() {
-        return filialeNum;
-    }
-
-    public void setFilialeNum(Integer filialeNum) {
-        this.filialeNum = filialeNum;
-    }
-
     public Date getScoutTime() {
         return scoutTime;
     }
 
     public void setScoutTime(Date scoutTime) {
         this.scoutTime = scoutTime;
+    }
+
+    public Integer getAccidentTypeId() {
+        return accidentTypeId;
+    }
+
+    public void setAccidentTypeId(Integer accidentTypeId) {
+        this.accidentTypeId = accidentTypeId;
+    }
+
+    public String getAccidentPhoto() {
+        return accidentPhoto;
+    }
+
+    public void setAccidentPhoto(String accidentPhoto) {
+        this.accidentPhoto = accidentPhoto == null ? null : accidentPhoto.trim();
+    }
+
+    public Integer getRecognizeeId() {
+        return recognizeeId;
+    }
+
+    public void setRecognizeeId(Integer recognizeeId) {
+        this.recognizeeId = recognizeeId;
+    }
+
+    public String getLossSituation() {
+        return lossSituation;
+    }
+
+    public void setLossSituation(String lossSituation) {
+        this.lossSituation = lossSituation == null ? null : lossSituation.trim();
+    }
+
+    public String getResponsibilityJudgment() {
+        return responsibilityJudgment;
+    }
+
+    public void setResponsibilityJudgment(String responsibilityJudgment) {
+        this.responsibilityJudgment = responsibilityJudgment == null ? null : responsibilityJudgment.trim();
     }
 }

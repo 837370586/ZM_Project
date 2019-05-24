@@ -3,8 +3,6 @@ package com.car_insurance.entity;
 public class User {
     private Integer userId;
 
-    private Integer roleId;
-
     private String userName;
 
     private Integer password;
@@ -13,9 +11,8 @@ public class User {
 
     private String phone;
 
-    public User(Integer userId, Integer roleId, String userName, Integer password, String salt, String phone) {
+    public User(Integer userId, String userName, Integer password, String salt, String phone) {
         this.userId = userId;
-        this.roleId = roleId;
         this.userName = userName;
         this.password = password;
         this.salt = salt;
@@ -32,14 +29,6 @@ public class User {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
     }
 
     public String getUserName() {

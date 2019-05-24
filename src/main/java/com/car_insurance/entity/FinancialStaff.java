@@ -7,11 +7,7 @@ public class FinancialStaff {
 
     private Integer serialNum;
 
-    private Integer financialStaffNum;
-
-    private String financialStaffName;
-
-    private String financialStaffPhone;
+    private Integer employeeId;
 
     private Integer financialStaffState;
 
@@ -25,12 +21,10 @@ public class FinancialStaff {
 
     private Date financialStaffTime;
 
-    public FinancialStaff(Integer financialStaffId, Integer serialNum, Integer financialStaffNum, String financialStaffName, String financialStaffPhone, Integer financialStaffState, String payeeNum, String payeeName, String payeeIdcard, Integer moneyState, Date financialStaffTime) {
+    public FinancialStaff(Integer financialStaffId, Integer serialNum, Integer employeeId, Integer financialStaffState, String payeeNum, String payeeName, String payeeIdcard, Integer moneyState, Date financialStaffTime) {
         this.financialStaffId = financialStaffId;
         this.serialNum = serialNum;
-        this.financialStaffNum = financialStaffNum;
-        this.financialStaffName = financialStaffName;
-        this.financialStaffPhone = financialStaffPhone;
+        this.employeeId = employeeId;
         this.financialStaffState = financialStaffState;
         this.payeeNum = payeeNum;
         this.payeeName = payeeName;
@@ -59,28 +53,12 @@ public class FinancialStaff {
         this.serialNum = serialNum;
     }
 
-    public Integer getFinancialStaffNum() {
-        return financialStaffNum;
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
-    public void setFinancialStaffNum(Integer financialStaffNum) {
-        this.financialStaffNum = financialStaffNum;
-    }
-
-    public String getFinancialStaffName() {
-        return financialStaffName;
-    }
-
-    public void setFinancialStaffName(String financialStaffName) {
-        this.financialStaffName = financialStaffName == null ? null : financialStaffName.trim();
-    }
-
-    public String getFinancialStaffPhone() {
-        return financialStaffPhone;
-    }
-
-    public void setFinancialStaffPhone(String financialStaffPhone) {
-        this.financialStaffPhone = financialStaffPhone == null ? null : financialStaffPhone.trim();
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 
     public Integer getFinancialStaffState() {

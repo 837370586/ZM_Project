@@ -7,4 +7,5 @@ import java.util.List;
 public class ApplicantExample extends Applicant  {
 
 
+
 }
