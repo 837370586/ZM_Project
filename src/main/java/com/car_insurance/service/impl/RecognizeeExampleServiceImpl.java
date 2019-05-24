@@ -8,6 +8,8 @@ import java.util.List;
 
 public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
 
+    private RecognizeeExampleMapper  pem;
+
     @Override
     public List<RecognizeeExample> selectAllRecognizeeExample() {
         return null;
