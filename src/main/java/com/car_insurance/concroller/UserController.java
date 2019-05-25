@@ -1,7 +1,6 @@
 package com.car_insurance.concroller;
 
 
-import com.car_insurance.entity.Users;
 import com.car_insurance.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

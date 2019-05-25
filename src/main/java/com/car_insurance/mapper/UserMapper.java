@@ -1,11 +1,9 @@
 package com.car_insurance.mapper;
 
 
-import com.car_insurance.entity.Users;
-
 import java.util.List;
 
-public interface UsersMapper {
+public interface UserMapper {
 
       List<Users> selectAllUsers();
 
