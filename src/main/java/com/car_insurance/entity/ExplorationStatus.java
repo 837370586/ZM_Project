@@ -1,32 +1,28 @@
 package com.car_insurance.entity;
 
 public class ExplorationStatus {
-    private Integer explorationStatusId;
+    private Integer exploration_status_id;
 
-    private String explorationStatusName;
+    private String exploration_status_name;
 
-    public ExplorationStatus(Integer explorationStatusId, String explorationStatusName) {
-        this.explorationStatusId = explorationStatusId;
-        this.explorationStatusName = explorationStatusName;
+    public Integer getExploration_status_id() {
+        return exploration_status_id;
     }
 
-    public ExplorationStatus() {
-        super();
+    public void setExploration_status_id(Integer exploration_status_id) {
+        this.exploration_status_id = exploration_status_id;
     }
 
-    public Integer getExplorationStatusId() {
-        return explorationStatusId;
+    public String getExploration_status_name() {
+        return exploration_status_name;
     }
 
-    public void setExplorationStatusId(Integer explorationStatusId) {
-        this.explorationStatusId = explorationStatusId;
+    public void setExploration_status_name(String exploration_status_name) {
+        this.exploration_status_name = exploration_status_name;
     }
 
-    public String getExplorationStatusName() {
-        return explorationStatusName;
-    }
-
-    public void setExplorationStatusName(String explorationStatusName) {
-        this.explorationStatusName = explorationStatusName == null ? null : explorationStatusName.trim();
+    public ExplorationStatus(Integer exploration_status_id, String exploration_status_name) {
+        this.exploration_status_id = exploration_status_id;
+        this.exploration_status_name = exploration_status_name;
     }
 }

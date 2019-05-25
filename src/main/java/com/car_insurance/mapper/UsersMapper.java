@@ -13,4 +13,6 @@ public interface UsersMapper {
 
       void alertUser(Users users);
 
+      void deleteUser();
+
 }
