@@ -20,6 +20,7 @@ public class BossServiceImpl implements BossService {
     private BossMapper bossMapper;
     //查询所有员工
     public List<EmployeeTableExample> findAllUser() {
+
         return bossMapper.findAllUser();
     }
 }
