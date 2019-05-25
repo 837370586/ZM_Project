@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.car_insurance.mapper.RecognizeeExampleMapper" >
+
+    <!--胡敏-->
+    <!--根据车牌号查是否在我公司买过保险-->
+    <select id="selectAllRecognizeeExample" resultType="com.car_insurance.entity.RecognizeeExample">
+        SELECT
+               recognizee_idcard ,NAME,age,sex,phone,policyNumber,car_owner,recognizee,carid,vin
+        FROM
+             recognizee
+        where
+              carid=#{carid}
+    </select>
+    <!--添加 工单的方法-->
+    <insert id="addWorkorder">
+         INSERT
+         INTO
+             work_order(employee_id,work_order_number,recognizee_id,accident_spot)
+         VALUES
+              ()
+    </insert>
+</mapper>

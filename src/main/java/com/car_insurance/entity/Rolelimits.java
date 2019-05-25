@@ -1,43 +1,39 @@
 package com.car_insurance.entity;
 
 public class Rolelimits {
-    private Integer rolelimitsId;
+    private Integer rolelimits_id;
 
-    private Integer roleId;
+    private Integer role_id;
 
-    private Integer limitsId;
+    private Integer limits_id;
 
-    public Rolelimits(Integer rolelimitsId, Integer roleId, Integer limitsId) {
-        this.rolelimitsId = rolelimitsId;
-        this.roleId = roleId;
-        this.limitsId = limitsId;
+    public Rolelimits(Integer rolelimits_id, Integer role_id, Integer limits_id) {
+        this.rolelimits_id = rolelimits_id;
+        this.role_id = role_id;
+        this.limits_id = limits_id;
     }
 
-    public Rolelimits() {
-        super();
+    public Integer getRolelimits_id() {
+        return rolelimits_id;
     }
 
-    public Integer getRolelimitsId() {
-        return rolelimitsId;
+    public void setRolelimits_id(Integer rolelimits_id) {
+        this.rolelimits_id = rolelimits_id;
     }
 
-    public void setRolelimitsId(Integer rolelimitsId) {
-        this.rolelimitsId = rolelimitsId;
+    public Integer getRole_id() {
+        return role_id;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public void setRole_id(Integer role_id) {
+        this.role_id = role_id;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public Integer getLimits_id() {
+        return limits_id;
     }
 
-    public Integer getLimitsId() {
-        return limitsId;
-    }
-
-    public void setLimitsId(Integer limitsId) {
-        this.limitsId = limitsId;
+    public void setLimits_id(Integer limits_id) {
+        this.limits_id = limits_id;
     }
 }
