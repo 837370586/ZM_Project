@@ -10,10 +10,14 @@
         FROM
              recognizee
         where
-              carid=carid
+              carid=#{carid}
     </select>
     <!--添加 工单的方法-->
-<insert id="">
-
-</insert>
+    <insert id="addWorkorder">
+         INSERT
+         INTO
+             work_order(employee_id,work_order_number,recognizee_id,accident_spot)
+         VALUES
+              ()
+    </insert>
 </mapper>

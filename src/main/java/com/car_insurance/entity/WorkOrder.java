@@ -1,65 +1,61 @@
 package com.car_insurance.entity;
 
 public class WorkOrder {
-    private Integer workOrderId;
+    private Integer work_order_id;
 
-    private Integer employeeId;
+    private Integer employee_id;
 
-    private Integer workOrderNumber;
+    private Integer workOrder_number;
 
-    private Integer recognizeeId;
+    private Integer recognizee_id;
 
-    private String accidentSpot;
+    private String accident_spot;
 
-    public WorkOrder(Integer workOrderId, Integer employeeId, Integer workOrderNumber, Integer recognizeeId, String accidentSpot) {
-        this.workOrderId = workOrderId;
-        this.employeeId = employeeId;
-        this.workOrderNumber = workOrderNumber;
-        this.recognizeeId = recognizeeId;
-        this.accidentSpot = accidentSpot;
+    public Integer getWork_order_id() {
+        return work_order_id;
     }
 
-    public WorkOrder() {
-        super();
+    public void setWork_order_id(Integer work_order_id) {
+        this.work_order_id = work_order_id;
     }
 
-    public Integer getWorkOrderId() {
-        return workOrderId;
+    public Integer getEmployee_id() {
+        return employee_id;
     }
 
-    public void setWorkOrderId(Integer workOrderId) {
-        this.workOrderId = workOrderId;
+    public void setEmployee_id(Integer employee_id) {
+        this.employee_id = employee_id;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
+    public Integer getWorkOrder_number() {
+        return workOrder_number;
     }
 
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
+    public void setWorkOrder_number(Integer workOrder_number) {
+        this.workOrder_number = workOrder_number;
     }
 
-    public Integer getWorkOrderNumber() {
-        return workOrderNumber;
+    public Integer getRecognizee_id() {
+        return recognizee_id;
     }
 
-    public void setWorkOrderNumber(Integer workOrderNumber) {
-        this.workOrderNumber = workOrderNumber;
+    public void setRecognizee_id(Integer recognizee_id) {
+        this.recognizee_id = recognizee_id;
     }
 
-    public Integer getRecognizeeId() {
-        return recognizeeId;
+    public String getAccident_spot() {
+        return accident_spot;
     }
 
-    public void setRecognizeeId(Integer recognizeeId) {
-        this.recognizeeId = recognizeeId;
+    public void setAccident_spot(String accident_spot) {
+        this.accident_spot = accident_spot;
     }
 
-    public String getAccidentSpot() {
-        return accidentSpot;
-    }
-
-    public void setAccidentSpot(String accidentSpot) {
-        this.accidentSpot = accidentSpot == null ? null : accidentSpot.trim();
+    public WorkOrder(Integer work_order_id, Integer employee_id, Integer workOrder_number, Integer recognizee_id, String accident_spot) {
+        this.work_order_id = work_order_id;
+        this.employee_id = employee_id;
+        this.workOrder_number = workOrder_number;
+        this.recognizee_id = recognizee_id;
+        this.accident_spot = accident_spot;
     }
 }

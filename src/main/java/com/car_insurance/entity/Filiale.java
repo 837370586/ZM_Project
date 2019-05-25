@@ -1,54 +1,50 @@
 package com.car_insurance.entity;
 
 public class Filiale {
-    private Integer filialeId;
+    private Integer filiale_id;
 
-    private Integer filialeNum;
+    private Integer filiale_num;
 
-    private String filialeName;
+    private String filiale_name;
 
-    private String filialeAdress;
+    private String filiale_adress;
 
-    public Filiale(Integer filialeId, Integer filialeNum, String filialeName, String filialeAdress) {
-        this.filialeId = filialeId;
-        this.filialeNum = filialeNum;
-        this.filialeName = filialeName;
-        this.filialeAdress = filialeAdress;
+    public Integer getFiliale_id() {
+        return filiale_id;
     }
 
-    public Filiale() {
-        super();
+    public void setFiliale_id(Integer filiale_id) {
+        this.filiale_id = filiale_id;
     }
 
-    public Integer getFilialeId() {
-        return filialeId;
+    public Integer getFiliale_num() {
+        return filiale_num;
     }
 
-    public void setFilialeId(Integer filialeId) {
-        this.filialeId = filialeId;
+    public void setFiliale_num(Integer filiale_num) {
+        this.filiale_num = filiale_num;
     }
 
-    public Integer getFilialeNum() {
-        return filialeNum;
+    public String getFiliale_name() {
+        return filiale_name;
     }
 
-    public void setFilialeNum(Integer filialeNum) {
-        this.filialeNum = filialeNum;
+    public void setFiliale_name(String filiale_name) {
+        this.filiale_name = filiale_name;
     }
 
-    public String getFilialeName() {
-        return filialeName;
+    public String getFiliale_adress() {
+        return filiale_adress;
     }
 
-    public void setFilialeName(String filialeName) {
-        this.filialeName = filialeName == null ? null : filialeName.trim();
+    public void setFiliale_adress(String filiale_adress) {
+        this.filiale_adress = filiale_adress;
     }
 
-    public String getFilialeAdress() {
-        return filialeAdress;
-    }
-
-    public void setFilialeAdress(String filialeAdress) {
-        this.filialeAdress = filialeAdress == null ? null : filialeAdress.trim();
+    public Filiale(Integer filiale_id, Integer filiale_num, String filiale_name, String filiale_adress) {
+        this.filiale_id = filiale_id;
+        this.filiale_num = filiale_num;
+        this.filiale_name = filiale_name;
+        this.filiale_adress = filiale_adress;
     }
 }

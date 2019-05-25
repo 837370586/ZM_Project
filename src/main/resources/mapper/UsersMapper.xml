@@ -6,5 +6,11 @@
 #         select * from user
     </select>
 
+    <insert id="addUser" parameterType="com.car_insurance.entity.Users">
+        insert into users (`user`,`password`) values (#{user},#{password})
+    </insert>
 
+    <update id="alertUser" parameterType="com.car_insurance.entity.Users">
+        update users set user=#{user},password=#{password} where id=#{id}
+    </update>
 </mapper>

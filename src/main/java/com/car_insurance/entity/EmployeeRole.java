@@ -1,43 +1,39 @@
 package com.car_insurance.entity;
 
 public class EmployeeRole {
-    private Integer employeeRoleId;
+    private Integer employee_role_id;
 
-    private Integer employeeId;
+    private Integer employee_id;
 
-    private Integer roleId;
+    private Integer role_id;
 
-    public EmployeeRole(Integer employeeRoleId, Integer employeeId, Integer roleId) {
-        this.employeeRoleId = employeeRoleId;
-        this.employeeId = employeeId;
-        this.roleId = roleId;
+    public Integer getEmployee_role_id() {
+        return employee_role_id;
     }
 
-    public EmployeeRole() {
-        super();
+    public void setEmployee_role_id(Integer employee_role_id) {
+        this.employee_role_id = employee_role_id;
     }
 
-    public Integer getEmployeeRoleId() {
-        return employeeRoleId;
+    public Integer getEmployee_id() {
+        return employee_id;
     }
 
-    public void setEmployeeRoleId(Integer employeeRoleId) {
-        this.employeeRoleId = employeeRoleId;
+    public void setEmployee_id(Integer employee_id) {
+        this.employee_id = employee_id;
     }
 
-    public Integer getEmployeeId() {
-        return employeeId;
+    public Integer getRole_id() {
+        return role_id;
     }
 
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
+    public void setRole_id(Integer role_id) {
+        this.role_id = role_id;
     }
 
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public EmployeeRole(Integer employee_role_id, Integer employee_id, Integer role_id) {
+        this.employee_role_id = employee_role_id;
+        this.employee_id = employee_id;
+        this.role_id = role_id;
     }
 }
