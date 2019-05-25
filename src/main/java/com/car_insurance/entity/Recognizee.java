@@ -35,6 +35,7 @@ public class Recognizee {
 
     private Date recognizee;
 
+
     public Recognizee(Integer recognizeeId, String recognizeeIdcard, String name, Integer age, String sex, String phone, Integer applicantId, String address, String carid, String carCategory, String engine, String vin, Integer insuranceId, String policynumber, String carOwner, Date recognizee) {
         this.recognizeeId = recognizeeId;
         this.recognizeeIdcard = recognizeeIdcard;
