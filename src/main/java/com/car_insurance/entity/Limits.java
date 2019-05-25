@@ -1,36 +1,26 @@
 package com.car_insurance.entity;
 
 public class Limits {
-    private Integer limitsId;
+    private Integer limits_id;
 
-    private String limitsName;
+    private String limits_name;
 
     private String tittle;
 
-    public Limits(Integer limitsId, String limitsName, String tittle) {
-        this.limitsId = limitsId;
-        this.limitsName = limitsName;
-        this.tittle = tittle;
+    public Integer getLimits_id() {
+        return limits_id;
     }
 
-    public Limits() {
-        super();
+    public void setLimits_id(Integer limits_id) {
+        this.limits_id = limits_id;
     }
 
-    public Integer getLimitsId() {
-        return limitsId;
+    public String getLimits_name() {
+        return limits_name;
     }
 
-    public void setLimitsId(Integer limitsId) {
-        this.limitsId = limitsId;
-    }
-
-    public String getLimitsName() {
-        return limitsName;
-    }
-
-    public void setLimitsName(String limitsName) {
-        this.limitsName = limitsName == null ? null : limitsName.trim();
+    public void setLimits_name(String limits_name) {
+        this.limits_name = limits_name;
     }
 
     public String getTittle() {
@@ -38,6 +28,15 @@ public class Limits {
     }
 
     public void setTittle(String tittle) {
-        this.tittle = tittle == null ? null : tittle.trim();
+        this.tittle = tittle;
+    }
+
+    public Limits(Integer limits_id, String limits_name, String tittle) {
+        this.limits_id = limits_id;
+        this.limits_name = limits_name;
+        this.tittle = tittle;
+    }
+
+    public Limits() {
     }
 }

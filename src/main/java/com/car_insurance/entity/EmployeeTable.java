@@ -1,53 +1,65 @@
 package com.car_insurance.entity;
 
 public class EmployeeTable {
-    private Integer employee_id;
+    private Integer employeeId;
 
-    private String employee_name;
+    private String employeeName;
 
-    private String employee_tel;
+    private String employeeTel;
 
-    private String employee_sex;
+    private String employeeSex;
 
-    private Integer role_id;
+    private Integer roleId;
 
-    public String getEmployee_tel() {
-        return employee_tel;
+    public EmployeeTable(Integer employeeId, String employeeName, String employeeTel, String employeeSex, Integer roleId) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeTel = employeeTel;
+        this.employeeSex = employeeSex;
+        this.roleId = roleId;
     }
 
-    public void setEmployee_tel(String employee_tel) {
-        this.employee_tel = employee_tel;
+    public EmployeeTable() {
+        super();
     }
 
-    public String getEmployee_sex() {
-        return employee_sex;
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee_sex(String employee_sex) {
-        this.employee_sex = employee_sex;
+    public void setEmployeeId(Integer employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public Integer getRole_id() {
-        return role_id;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setRole_id(Integer role_id) {
-        this.role_id = role_id;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName == null ? null : employeeName.trim();
     }
 
-    public Integer getEmployee_id() {
-        return employee_id;
+    public String getEmployeeTel() {
+        return employeeTel;
     }
 
-    public void setEmployee_id(Integer employee_id) {
-        this.employee_id = employee_id;
+    public void setEmployeeTel(String employeeTel) {
+        this.employeeTel = employeeTel == null ? null : employeeTel.trim();
     }
 
-    public EmployeeTable(Integer employee_id, String employee_name, String employee_tel, String employee_sex, Integer role_id) {
-        this.employee_id = employee_id;
-        this.employee_name = employee_name;
-        this.employee_tel = employee_tel;
-        this.employee_sex = employee_sex;
-        this.role_id = role_id;
+    public String getEmployeeSex() {
+        return employeeSex;
+    }
+
+    public void setEmployeeSex(String employeeSex) {
+        this.employeeSex = employeeSex == null ? null : employeeSex.trim();
+    }
+
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 }
