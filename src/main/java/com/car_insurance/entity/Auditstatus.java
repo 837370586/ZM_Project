@@ -1,32 +1,28 @@
 package com.car_insurance.entity;
 
 public class Auditstatus {
-    private Integer auditStatusId;
+    private Integer auditstatus_id;
 
-    private String auditStatus;
+    private String audit_status;
 
-    public Auditstatus(Integer auditStatusId, String auditStatus) {
-        this.auditStatusId = auditStatusId;
-        this.auditStatus = auditStatus;
+    public Integer getAuditstatus_id() {
+        return auditstatus_id;
     }
 
-    public Auditstatus() {
-        super();
+    public void setAuditstatus_id(Integer auditstatus_id) {
+        this.auditstatus_id = auditstatus_id;
     }
 
-    public Integer getAuditStatusId() {
-        return auditStatusId;
+    public String getAudit_status() {
+        return audit_status;
     }
 
-    public void setAuditStatusId(Integer auditStatusId) {
-        this.auditStatusId = auditStatusId;
+    public void setAudit_status(String audit_status) {
+        this.audit_status = audit_status;
     }
 
-    public String getAuditStatus() {
-        return auditStatus;
-    }
-
-    public void setAuditStatus(String auditStatus) {
-        this.auditStatus = auditStatus == null ? null : auditStatus.trim();
+    public Auditstatus(Integer auditstatus_id, String audit_status) {
+        this.auditstatus_id = auditstatus_id;
+        this.audit_status = audit_status;
     }
 }
