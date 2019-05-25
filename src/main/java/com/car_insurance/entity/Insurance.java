@@ -1,54 +1,53 @@
 package com.car_insurance.entity;
 
 public class Insurance {
-    private Integer insuranceId;
+    private Integer insurance_id;
 
-    private String insuranceDetails;
+    private String insurance_details;
 
-    private String insuranceType;
+    private String insurance_type;
 
-    private Integer insurancePrice;
+    private Integer insurance_price;
 
-    public Insurance(Integer insuranceId, String insuranceDetails, String insuranceType, Integer insurancePrice) {
-        this.insuranceId = insuranceId;
-        this.insuranceDetails = insuranceDetails;
-        this.insuranceType = insuranceType;
-        this.insurancePrice = insurancePrice;
+    public Integer getInsurance_id() {
+        return insurance_id;
+    }
+
+    public void setInsurance_id(Integer insurance_id) {
+        this.insurance_id = insurance_id;
+    }
+
+    public String getInsurance_details() {
+        return insurance_details;
+    }
+
+    public void setInsurance_details(String insurance_details) {
+        this.insurance_details = insurance_details;
+    }
+
+    public String getInsurance_type() {
+        return insurance_type;
+    }
+
+    public void setInsurance_type(String insurance_type) {
+        this.insurance_type = insurance_type;
+    }
+
+    public Integer getInsurance_price() {
+        return insurance_price;
+    }
+
+    public void setInsurance_price(Integer insurance_price) {
+        this.insurance_price = insurance_price;
+    }
+
+    public Insurance(Integer insurance_id, String insurance_details, String insurance_type, Integer insurance_price) {
+        this.insurance_id = insurance_id;
+        this.insurance_details = insurance_details;
+        this.insurance_type = insurance_type;
+        this.insurance_price = insurance_price;
     }
 
     public Insurance() {
-        super();
-    }
-
-    public Integer getInsuranceId() {
-        return insuranceId;
-    }
-
-    public void setInsuranceId(Integer insuranceId) {
-        this.insuranceId = insuranceId;
-    }
-
-    public String getInsuranceDetails() {
-        return insuranceDetails;
-    }
-
-    public void setInsuranceDetails(String insuranceDetails) {
-        this.insuranceDetails = insuranceDetails == null ? null : insuranceDetails.trim();
-    }
-
-    public String getInsuranceType() {
-        return insuranceType;
-    }
-
-    public void setInsuranceType(String insuranceType) {
-        this.insuranceType = insuranceType == null ? null : insuranceType.trim();
-    }
-
-    public Integer getInsurancePrice() {
-        return insurancePrice;
-    }
-
-    public void setInsurancePrice(Integer insurancePrice) {
-        this.insurancePrice = insurancePrice;
     }
 }

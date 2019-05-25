@@ -3,109 +3,36 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class FinancialStaff {
-    private Integer financialStaffId;
+    private Integer financial_staff_id;
 
-    private Integer serialNum;
+    private Integer serial_num;
 
-    private Integer employeeId;
+    private Integer employee_id;
 
-    private Integer financialStaffState;
+    private Integer financial_staff_state;
 
-    private String payeeNum;
+    private String payee_num;
 
-    private String payeeName;
+    private String payee_name;
 
-    private String payeeIdcard;
+    private String payee_idcard;
 
-    private Integer moneyState;
+    private Integer money_state;
 
-    private Date financialStaffTime;
+    private Date financial_staff_time;
 
-    public FinancialStaff(Integer financialStaffId, Integer serialNum, Integer employeeId, Integer financialStaffState, String payeeNum, String payeeName, String payeeIdcard, Integer moneyState, Date financialStaffTime) {
-        this.financialStaffId = financialStaffId;
-        this.serialNum = serialNum;
-        this.employeeId = employeeId;
-        this.financialStaffState = financialStaffState;
-        this.payeeNum = payeeNum;
-        this.payeeName = payeeName;
-        this.payeeIdcard = payeeIdcard;
-        this.moneyState = moneyState;
-        this.financialStaffTime = financialStaffTime;
+    public FinancialStaff(Integer financial_staff_id, Integer serial_num, Integer employee_id, Integer financial_staff_state, String payee_num, String payee_name, String payee_idcard, Integer money_state, Date financial_staff_time) {
+        this.financial_staff_id = financial_staff_id;
+        this.serial_num = serial_num;
+        this.employee_id = employee_id;
+        this.financial_staff_state = financial_staff_state;
+        this.payee_num = payee_num;
+        this.payee_name = payee_name;
+        this.payee_idcard = payee_idcard;
+        this.money_state = money_state;
+        this.financial_staff_time = financial_staff_time;
     }
 
     public FinancialStaff() {
-        super();
-    }
-
-    public Integer getFinancialStaffId() {
-        return financialStaffId;
-    }
-
-    public void setFinancialStaffId(Integer financialStaffId) {
-        this.financialStaffId = financialStaffId;
-    }
-
-    public Integer getSerialNum() {
-        return serialNum;
-    }
-
-    public void setSerialNum(Integer serialNum) {
-        this.serialNum = serialNum;
-    }
-
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Integer employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Integer getFinancialStaffState() {
-        return financialStaffState;
-    }
-
-    public void setFinancialStaffState(Integer financialStaffState) {
-        this.financialStaffState = financialStaffState;
-    }
-
-    public String getPayeeNum() {
-        return payeeNum;
-    }
-
-    public void setPayeeNum(String payeeNum) {
-        this.payeeNum = payeeNum == null ? null : payeeNum.trim();
-    }
-
-    public String getPayeeName() {
-        return payeeName;
-    }
-
-    public void setPayeeName(String payeeName) {
-        this.payeeName = payeeName == null ? null : payeeName.trim();
-    }
-
-    public String getPayeeIdcard() {
-        return payeeIdcard;
-    }
-
-    public void setPayeeIdcard(String payeeIdcard) {
-        this.payeeIdcard = payeeIdcard == null ? null : payeeIdcard.trim();
-    }
-
-    public Integer getMoneyState() {
-        return moneyState;
-    }
-
-    public void setMoneyState(Integer moneyState) {
-        this.moneyState = moneyState;
-    }
-
-    public Date getFinancialStaffTime() {
-        return financialStaffTime;
-    }
-
-    public void setFinancialStaffTime(Date financialStaffTime) {
-        this.financialStaffTime = financialStaffTime;
     }
 }
