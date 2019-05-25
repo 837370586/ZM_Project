@@ -1,9 +1,9 @@
 package com.car_insurance.entity;
 
 public class User {
-    private Integer userId;
+    private Integer user_id;
 
-    private String userName;
+    private String user_name;
 
     private Integer password;
 
@@ -11,32 +11,20 @@ public class User {
 
     private String phone;
 
-    public User(Integer userId, String userName, Integer password, String salt, String phone) {
-        this.userId = userId;
-        this.userName = userName;
-        this.password = password;
-        this.salt = salt;
-        this.phone = phone;
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public User() {
-        super();
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName == null ? null : userName.trim();
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public Integer getPassword() {
@@ -52,7 +40,7 @@ public class User {
     }
 
     public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
+        this.salt = salt;
     }
 
     public String getPhone() {
@@ -60,6 +48,14 @@ public class User {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+        this.phone = phone;
+    }
+
+    public User(Integer user_id, String user_name, Integer password, String salt, String phone) {
+        this.user_id = user_id;
+        this.user_name = user_name;
+        this.password = password;
+        this.salt = salt;
+        this.phone = phone;
     }
 }
