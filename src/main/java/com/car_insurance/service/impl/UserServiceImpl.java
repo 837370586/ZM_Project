@@ -11,24 +11,24 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Resource
-    private UserMapper um;
-
-   public List<Users> selectAllUsers(){
-
-        return um.selectAllUsers();
-
-    }
-
-
-    public void addUser(Users users){
-
-       um.addUser(users);
-    }
-
-
-    public void alertUser(Users users) {
-        um.alertUser(users);
-    }
+//    @Resource
+//    private UserMapper um;
+//
+//   public List<Users> selectAllUsers(){
+//
+//        return um.selectAllUsers();
+//
+//    }
+//
+//
+//    public void addUser(Users users){
+//
+//       um.addUser(users);
+//    }
+//
+//
+//    public void alertUser(Users users) {
+//        um.alertUser(users);
+//    }
 
 }
