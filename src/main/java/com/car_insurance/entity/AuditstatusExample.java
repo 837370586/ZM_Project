@@ -1,8 +1,8 @@
 package com.car_insurance.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class AuditstatusExample extends Auditstatus {
-
+    public AuditstatusExample(Integer auditstatus_id, String audit_status) {
+        super(auditstatus_id, audit_status);
+    }
 }
