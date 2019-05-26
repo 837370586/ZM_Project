@@ -12,7 +12,7 @@ public interface RecognizeeExampleService {
     List<RecognizeeExample> selectAllRecognizeeExample(String carid);
 
     //生成订单的方法
-    public  void addWorkorder();
+    //public  void addWorkorder();
 
     //查询被保险人的方法
     List<Recognizee> selectAllRecognizee(String applicant_idcard);
