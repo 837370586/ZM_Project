@@ -35,7 +35,7 @@
 
 
 
-    <!--添加 工单的方法-->
+    <!--添加 工单的方法自动生成工单号-->
     <insert id="addWorkorder">
          INSERT
          INTO
