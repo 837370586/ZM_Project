@@ -19,9 +19,15 @@ public class ScoutController {
     @RequestMapping("/scoutShow")
     public String showScout(Model model){
         model.addAttribute("scoutList",sse.selectAllScout());
+        System.out.print(sse.selectAllScout().get(0).getScout_num());
         return "scoutList";
     }
-
-
+    //查询接口表内容
+    @RequestMapping("/interviceShow")
+    public String ShowIntervice(Model model){
+        model.addAttribute("interviceList",sse.selectAllIntervice());
+        System.out.print(sse.selectAllIntervice().get(0).getPayee_name());
+        return  "interviceList";
+    }
 
 }

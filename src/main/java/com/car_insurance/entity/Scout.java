@@ -96,4 +96,7 @@ public class Scout {
     public void setResponsibility_judgment(String responsibility_judgment) {
         this.responsibility_judgment = responsibility_judgment;
     }
+    public Scout(){
+
+    }
 }
