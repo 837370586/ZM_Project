@@ -4,50 +4,53 @@
 
     <!--胡敏-->
     <!--根据车牌号查是否在我公司买过保险-->
-    <select id="selectAllRecognizeeExample" resultType="com.car_insurance.entity.RecognizeeExample">
+    <resultMap type="com.car_insurance.entity.RecognizeeExample" id="Rem">
+    <!--第一张表的映射信息  -->
+        <result property="carid" javaType="String" column="carid"/>
+
+        <result property="applicant_id" javaType="Integer" column="applicant_id"/>
+    <!--第二张表的映射信息  -->
+        <association property="applicant" javaType="com.car_insurance.entity.ApplicantExample" >
+
+            <result property="applicant_idcard" javaType="String" column="applicant_idcard"/>
+            <result property="applicant_name" javaType="String" column="applicant_name"/>
+
+            <result property="age" javaType="Integer" column="age"/>
+            <result property="applicant_phone" javaType="String" column="applicant_phone"/>
+            <result property="sex" javaType="String" column="sex"/>
+            <result property="address" javaType="String" column="address"/>
+            <result property="applicant_time" javaType="String" column="applicant_time"/>
+
+        </association>
+    </resultMap >
+
+    <select id="selectAllRecognizeeExample"  resultType="com.car_insurance.entity.ApplicantExample">
         SELECT
-               recognizee_idcard ,NAME,age,sex,phone,policyNumber,car_owner,recognizee,carid,vin
+            a.`applicant_idcard`,a.`applicant_name`,a.`age`,a.`applicant_phone`,a.`sex`,a.`address`,a.`applicant_time`
         FROM
-             recognizee
-        where
-              carid=#{carid}
+             applicant a LEFT JOIN recognizee r ON a.`applicant_id`=r.`applicant_id`
+        WHERE
+              r.`carid`=${carid}
     </select>
+
+
+
     <!--添加 工单的方法-->
     <insert id="addWorkorder">
          INSERT
          INTO
              work_order(employee_id,work_order_number,recognizee_id,accident_spot)
          VALUES
-              ()
+              (#{employee_id},#{work_order_number},#{recognizee_id},#{accident_spot})
     </insert>
 
-    <resultMap type="com.car_insurance.entity.RecognizeeExample" id="RecognizeeExampleMap">
-        <!--第一张表的映射信息  -->
-        <result property="recognizee_id" javaType="Integer" column="recognizee_id"/>
-        <result property="recognizee_idcard" javaType="String" column="recognizee_idcard"/>
-        <result property="name" javaType="String" column="name"/>
-        <result property="age" javaType="Integer" column="age"/>
-        <result property="sex" javaType="String" column="sex"/>
-        <result property="phone" javaType="String" column="phone"/>
-        <result property="applicant_id" javaType="Integer" column="applicant_id"/>
-        <result property="phone" javaType="String" column="phone"/>
-        <result property="address" javaType="String" column="address"/>
-        <result property="car_category" javaType="String" column="car_category"/>
-        <result property="engine" javaType="String" column="engine"/>
-        <result property="vin" javaType="String" column="vin"/>
-        <result property="insurance_id" javaType="Integer" column="insurance_id"/>
-        <result property="policynumber" javaType="String" column="policynumber"/>
-        <result property="car_owner" javaType="String" column="car_owner"/>
+    <!--查询被保险人的方法-->
+    <select id="selectAllRecognizee" resultType="com.car_insurance.entity.RecognizeeExample">
 
-
-        <!--第二张表的映射信息  -->
-        <association property="applicant" javaType="com.car_insurance.entity.ApplicantExample" >
-            <result property="applicant_idcard" javaType="String" column="applicant_idcard"/>
-
-        </association>
-    </resultMap>
-    <select id="selectAllRecognizee" resultMap="RecognizeeExampleMap">
-
+        SELECT
+               recognizee,recognizee_idcard,NAME,age,sex,phone,applicant_id,address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
+        FROM
+             recognizee
 
     </select>
 </mapper>

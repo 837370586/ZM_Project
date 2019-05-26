@@ -93,4 +93,5 @@ public class Applicant {
         this.address = address;
         this.applicant_time = applicant_time;
     }
+    public Applicant(){};
 }

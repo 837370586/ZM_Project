@@ -1,5 +1,6 @@
 package com.car_insurance.mapper;
 
+import com.car_insurance.entity.InsuranceExample;
 import com.car_insurance.entity.Recognizee;
 import com.car_insurance.entity.RecognizeeExample;
 
@@ -15,6 +16,9 @@ public interface RecognizeeExampleMapper {
     public  void addWorkorder();
 
     //查询被保险人的方法
-    List<Recognizee> selectAllRecognizee(String applicant_idcard);
+    List<RecognizeeExample> selectAllRecognizee(String applicant_idcard);
+
+    //查询保险详细信息
+    List<InsuranceExample> selectAllInsuranceExample(Integer insurance_id);
 
 }

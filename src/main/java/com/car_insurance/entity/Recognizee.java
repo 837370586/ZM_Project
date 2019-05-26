@@ -181,4 +181,7 @@ public class Recognizee {
         this.car_owner = car_owner;
         this.recognizee = recognizee;
     }
+
+    public Recognizee() {
+    }
 }
