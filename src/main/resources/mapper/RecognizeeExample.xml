@@ -20,4 +20,34 @@
          VALUES
               ()
     </insert>
+
+    <resultMap type="com.car_insurance.entity.RecognizeeExample" id="RecognizeeExampleMap">
+        <!--第一张表的映射信息  -->
+        <result property="recognizee_id" javaType="Integer" column="recognizee_id"/>
+        <result property="recognizee_idcard" javaType="String" column="recognizee_idcard"/>
+        <result property="name" javaType="String" column="name"/>
+        <result property="age" javaType="Integer" column="age"/>
+        <result property="sex" javaType="String" column="sex"/>
+        <result property="phone" javaType="String" column="phone"/>
+        <result property="applicant_id" javaType="Integer" column="applicant_id"/>
+        <result property="phone" javaType="String" column="phone"/>
+        <result property="address" javaType="String" column="address"/>
+        <result property="car_category" javaType="String" column="car_category"/>
+        <result property="engine" javaType="String" column="engine"/>
+        <result property="vin" javaType="String" column="vin"/>
+        <result property="insurance_id" javaType="Integer" column="insurance_id"/>
+        <result property="policynumber" javaType="String" column="policynumber"/>
+        <result property="car_owner" javaType="String" column="car_owner"/>
+
+
+        <!--第二张表的映射信息  -->
+        <association property="applicant" javaType="com.car_insurance.entity.ApplicantExample" >
+            <result property="applicant_idcard" javaType="String" column="applicant_idcard"/>
+
+        </association>
+    </resultMap>
+    <select id="selectAllRecognizee" resultMap="RecognizeeExampleMap">
+
+
+    </select>
 </mapper>
