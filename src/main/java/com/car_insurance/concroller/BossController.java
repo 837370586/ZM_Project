@@ -17,7 +17,6 @@ public class BossController {
         System.out.println(666);
         ModelAndView mv = new ModelAndView("Boss");
         mv.addObject("list",bossService.findAllUser());
-        bossService.findAllUser().forEach(yuan-> System.out.println(yuan.getEmployee_name()));
         return mv;
     }
 

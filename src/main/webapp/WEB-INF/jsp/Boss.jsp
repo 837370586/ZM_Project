@@ -22,17 +22,17 @@
                 <td>权限等级</td>
                 <td>权限内容</td>
             </tr>
-            <c:forEach items="${list}" var="employee">
+          <c:forEach items="${list}" var="employee">
                 <tr>
                    <td>${employee.employee_id}</td>
                     <td>${employee.employee_name}</td>
                     <td>${employee.employee_sex}</td>
-                    <td>${employee.employee_tel}</td>
-                    <td>${employee.role.roleName}</td>
+                    <td>${employee.employee_tel}</td><
+                    <td>${employee.role.role_name}</td>
                 </tr>
 
 
-            </c:forEach>
+            </c:forEach>--%>
 
 
         </table>

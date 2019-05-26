@@ -36,4 +36,5 @@ public class EmployeeRole {
         this.employee_id = employee_id;
         this.role_id = role_id;
     }
+    public EmployeeRole(){}
 }

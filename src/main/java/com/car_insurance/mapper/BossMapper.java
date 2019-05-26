@@ -2,8 +2,6 @@ package com.car_insurance.mapper;
 
 
 
-
-
 import com.car_insurance.entity.EmployeeTableExample;
 
 import java.util.List;

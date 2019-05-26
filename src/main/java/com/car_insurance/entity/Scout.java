@@ -30,6 +30,9 @@ public class Scout {
         this.responsibility_judgment = responsibility_judgment;
     }
 
+    public Scout() {
+    }
+
     public Integer getScout_id() {
         return scout_id;
     }
