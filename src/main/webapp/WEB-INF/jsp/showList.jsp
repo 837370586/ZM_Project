@@ -25,7 +25,7 @@
     <c:forEach items="${showList}" var="list">
         <tr>
             <td>${list.address}</td>
-            <td></td>
+            <td>${list.recognizee_idcard}</td>
             <td></td>
             <td></td>
             <td></td>
