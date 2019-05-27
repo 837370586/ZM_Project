@@ -15,6 +15,6 @@ public interface ScoutService {
     //查询接口里的内容
     List<InterviceExample> selectAllIntervice();
     //连表查询需要跟接口表比对的字段
-    List<InterviceExample> selectPrice();
+    List<ScoutExample> selectPrice();
 
 }

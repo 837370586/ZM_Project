@@ -14,21 +14,26 @@
         from
                  intervice
     </select>
-        <resultMap id="selectCompair" type="com.car_insurance.entity.InterviceExample">
-            <result property="goods_name"  javaType="String" column="goods_name"/>
-            <result property="goods_price" javaType="double" column="goods_price"/>
-        <association property="scout" javaType="com.car_insurance.entity.ScoutExample">
-            <result property="goods_name"  javaType="String" column="goods_name"/>
-            <result property="goods_price" javaType="double" column="goods_price"/>
-        </association>
+        <resultMap id="selectCompair" type="com.car_insurance.entity.ScoutExample">
+
+                <result property="accidentgoods_name"  javaType="String" column="goods_name"/>
+                <result property="accidentgoods_price" javaType="Double" column="goods_price"/>
+
+            <association property="intervice" javaType="com.car_insurance.entity.Intervice">
+                <result property="goods_name"  javaType="String" column="goods_name"/>
+                <result property="goods_price" javaType="Double" column="goods_price"/>
+            </association>
+            <!--<association property="state_associated" javaType="com.car_insurance.entity.stateAssociated">-->
+                <!--<result property="state_id" javaType="Integer" column="state_id"/>-->
+                <!--<result property="value" javaType="String" column="value"/>-->
+            <!--</association>-->
         </resultMap>
+
         <select id="selectPrice" resultMap="selectCompair">
-
               select
-                     s.`goods_name`,i.`goods_name`,s.`goods_price`,i.`goods_price`
+                     s.`accidentgoods_name`,i.`goods_name`,s.`accidentgoods_price`,i.`goods_price`,s.state_id
               from
-                     scout s inner join intervice i on s.`scout_id`=i.`scout_id`
-
+                   scout s inner join intervice i on s.`scout_id`=i.`scout_id`
         </select>
 
 </mapper>

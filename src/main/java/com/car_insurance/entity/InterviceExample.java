@@ -4,21 +4,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InterviceExample extends Intervice {
-    private Integer scout_id;
 
-    public Integer getScout_id() {
-        return scout_id;
+    private Scout scout;
+
+    private StateAssociated stateAssociated;
+
+    public Scout getScout() {
+        return scout;
     }
 
-    public void setScout_id(Integer scout_id) {
-        this.scout_id = scout_id;
+    public void setScout(Scout scout) {
+        this.scout = scout;
     }
 
-    public InterviceExample(Integer num, String goods_name, Double goods_price, Integer scout_id) {
-        super(num, goods_name, goods_price);
-        this.scout_id = scout_id;
+    public StateAssociated getStateAssociated() {
+        return stateAssociated;
     }
 
-    public InterviceExample() {
+    public void setStateAssociated(StateAssociated stateAssociated) {
+        this.stateAssociated = stateAssociated;
     }
+
+//    public InterviceExample(Integer scout_id, Integer num, String goods_name, Double goods_price, Scout scout, StateAssociated stateAssociated) {
+//        super(scout_id, num, goods_name, goods_price);
+//        this.scout = scout;
+//        this.stateAssociated = stateAssociated;
+//    }
+//
+//    public InterviceExample() {
+//    }
 }

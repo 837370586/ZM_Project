@@ -23,7 +23,7 @@ public class ScoutServiceImpl implements ScoutService{
         return sm.selectAllIntervice();
     }
     //连表查询需要跟接口表比对的字段
-    public List<InterviceExample> selectPrice(){
+    public List<ScoutExample> selectPrice(){
 
         return sm.selectPrice();
     }

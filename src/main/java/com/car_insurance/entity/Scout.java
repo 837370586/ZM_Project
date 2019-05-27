@@ -19,9 +19,11 @@ public class Scout {
 
     private String responsibility_judgment;
 
-    private String goods_name;
+    private String accidentgoods_name;
 
-    private Double goods_price;
+    private Double accidentgoods_price;
+
+    private Integer state_id;
 
     public Integer getScout_id() {
         return scout_id;
@@ -87,23 +89,34 @@ public class Scout {
         this.responsibility_judgment = responsibility_judgment;
     }
 
-    public String getGoods_name() {
-        return goods_name;
+    public String getAccidentgoods_name() {
+        return accidentgoods_name;
     }
 
-    public void setGoods_name(String goods_name) {
-        this.goods_name = goods_name;
+    public void setAccidentgoods_name(String accidentgoods_name) {
+        this.accidentgoods_name = accidentgoods_name;
     }
 
-    public Double getGoods_price() {
-        return goods_price;
+    public Double getAccidentgoods_price() {
+        return accidentgoods_price;
     }
 
-    public void setGoods_price(Double goods_price) {
-        this.goods_price = goods_price;
+    public void setAccidentgoods_price(Double accidentgoods_price) {
+        this.accidentgoods_price = accidentgoods_price;
     }
 
-    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentphoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, String goods_name, Double goods_price) {
+    public Integer getState_id() {
+        return state_id;
+    }
+
+    public void setState_id(Integer state_id) {
+        this.state_id = state_id;
+    }
+
+    public Scout() {
+    }
+
+    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentphoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, String accidentgoods_name, Double accidentgoods_price, Integer state_id) {
         this.scout_id = scout_id;
         this.scout_num = scout_num;
         this.scout_time = scout_time;
@@ -112,10 +125,8 @@ public class Scout {
         this.recognizee_id = recognizee_id;
         this.loss_situation = loss_situation;
         this.responsibility_judgment = responsibility_judgment;
-        this.goods_name = goods_name;
-        this.goods_price = goods_price;
-    }
-    public Scout(){
-
+        this.accidentgoods_name = accidentgoods_name;
+        this.accidentgoods_price = accidentgoods_price;
+        this.state_id = state_id;
     }
 }
