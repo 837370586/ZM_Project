@@ -1,26 +1,29 @@
 package com.car_insurance.entity;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class EmployeeTableExample extends  EmployeeTable {
 
-    private EmployeeRoleExample employeeRoleExample;
-    private RoleExample roleExample;
+    private EmployeeRole employeeRole;
+    private Role role;
 
     public EmployeeTableExample() {
     }
 
-    public EmployeeTableExample(Integer employee_id, String employee_name, String employee_tel, String employee_sex, Integer role_id, EmployeeRoleExample employeeRoleExample) {
-        super(employee_id, employee_name, employee_tel, employee_sex, role_id);
-        this.employeeRoleExample = employeeRoleExample;
+
+    public EmployeeRole getEmployeeRole() {
+        return employeeRole;
     }
 
-    public EmployeeTableExample(EmployeeRoleExample employeeRoleExample) {
-        this.employeeRoleExample = employeeRoleExample;
+    public void setEmployeeRole(EmployeeRole employeeRole) {
+        this.employeeRole = employeeRole;
     }
 
-    public EmployeeTableExample(Integer employee_id, String employee_name, String employee_tel, String employee_sex, Integer role_id) {
-        super(employee_id, employee_name, employee_tel, employee_sex, role_id);
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

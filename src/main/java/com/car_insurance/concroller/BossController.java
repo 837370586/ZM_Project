@@ -14,7 +14,7 @@ public class BossController {
     private BossService bossService;
     @RequestMapping("qqq")
     public ModelAndView findAllUser(){
-        System.out.println(666);
+        System.out.println(bossService.findAllUser().get(0).getEmployee_name());
         ModelAndView mv = new ModelAndView("Boss");
         mv.addObject("list",bossService.findAllUser());
         return mv;
