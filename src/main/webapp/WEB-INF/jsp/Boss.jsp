@@ -27,12 +27,12 @@
                    <td>${employee.employee_id}</td>
                     <td>${employee.employee_name}</td>
                     <td>${employee.employee_sex}</td>
-                    <td>${employee.employee_tel}</td><
+                    <td>${employee.employee_tel}</td>
                     <td>${employee.role.role_name}</td>
                 </tr>
 
 
-            </c:forEach>--%>
+            <c:forEach>
 
 
         </table>
