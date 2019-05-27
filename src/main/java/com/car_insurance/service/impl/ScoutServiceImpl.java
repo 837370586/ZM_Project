@@ -22,12 +22,9 @@ public class ScoutServiceImpl implements ScoutService{
     public List<InterviceExample> selectAllIntervice(){
         return sm.selectAllIntervice();
     }
-    public  List<ScoutExample> selectAll(){
-        return sm.selectAll();
-    }
-    public boolean comparison(){
-        List<ScoutExample> list1 = sm.selectAllScout();
-        List<InterviceExample> list2 = sm.selectAllIntervice();
-        return true;
+    //连表查询需要跟接口表比对的字段
+    public List<InterviceExample> selectPrice(){
+
+        return sm.selectPrice();
     }
 }

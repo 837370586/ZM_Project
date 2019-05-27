@@ -26,8 +26,14 @@ public class ScoutController {
     @RequestMapping("/interviceShow")
     public String ShowIntervice(Model model){
         model.addAttribute("interviceList",sse.selectAllIntervice());
-        System.out.print(sse.selectAllIntervice().get(0).getPayee_name());
+        System.out.print(sse.selectAllIntervice().get(0).getGoods_name());
         return  "interviceList";
+    }
+    //连表查询订单表对比接口表里零件价格
+    @RequestMapping("/compairShow")
+    public String compairShow(Model model){
+        model.addAttribute("compairList",sse.selectPrice());
+        return "compairList";
     }
 
 }
