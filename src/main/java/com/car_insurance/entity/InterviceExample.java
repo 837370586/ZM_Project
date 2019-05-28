@@ -14,11 +14,4 @@ public class InterviceExample extends Intervice {
         this.scout_id = scout_id;
     }
 
-    public InterviceExample(Integer num, String goods_name, Double goods_price, Integer scout_id) {
-        super(num, goods_name, goods_price);
-        this.scout_id = scout_id;
-    }
-
-    public InterviceExample() {
-    }
 }

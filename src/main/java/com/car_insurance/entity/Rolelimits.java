@@ -13,6 +13,9 @@ public class Rolelimits {
         this.limits_id = limits_id;
     }
 
+    public Rolelimits() {
+    }
+
     public Integer getRolelimits_id() {
         return rolelimits_id;
     }

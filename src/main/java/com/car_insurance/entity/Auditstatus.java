@@ -25,4 +25,7 @@ public class Auditstatus {
         this.auditstatus_id = auditstatus_id;
         this.audit_status = audit_status;
     }
+
+    public Auditstatus() {
+    }
 }

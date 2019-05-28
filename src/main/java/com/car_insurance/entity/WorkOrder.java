@@ -58,4 +58,7 @@ public class WorkOrder {
         this.recognizee_id = recognizee_id;
         this.accident_spot = accident_spot;
     }
+
+    public WorkOrder() {
+    }
 }

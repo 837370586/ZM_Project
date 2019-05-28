@@ -25,4 +25,7 @@ public class ExplorationStatus {
         this.exploration_status_id = exploration_status_id;
         this.exploration_status_name = exploration_status_name;
     }
+
+    public ExplorationStatus() {
+    }
 }
