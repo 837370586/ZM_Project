@@ -47,4 +47,7 @@ public class Filiale {
         this.filiale_name = filiale_name;
         this.filiale_adress = filiale_adress;
     }
+
+    public Filiale() {
+    }
 }

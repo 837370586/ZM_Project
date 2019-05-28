@@ -825,7 +825,7 @@ h6.w3l-style {
 /*-- video section --*/
 .video-w3l {
     background: rgba(0, 0, 0, 0.01);
-    min-height: 400px;
+    min-height: 500px;
     text-align: center;
 }
 .video-w3l:hover{
@@ -848,7 +848,7 @@ h6.w3l-style {
     color: #fff;
     font-size: 50px;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 /*-- //video section --*/
@@ -1371,7 +1371,9 @@ h5.small-title {
     float: right;
 }
 
-.form-bg input[type="text"], .form-bg input[type="email"], .form-bg textarea {
+.form-bg input {
+    margin-top: 10px;
+    margin-bottom: 1em;
     width: 100%;
     padding: 11px 16px;
     border: none;
@@ -1386,26 +1388,24 @@ h5.small-title {
     -ms-transition: 0.5s all;
     -moz-transition: 0.5s all;
 }
+.form-bg span{
 
-.form-bg input[type="text"],
-.form-bg input[type="email"] {
-    margin-bottom: 1em;
+    color: #FFFFFF;
+    font-size: 16px;
+    /*margin-bottom: 10px;*/
+
 }
 
-.form-bg textarea {
-    resize: none;
-    height: 100px;
-}
-
-.form-bg input[type="submit"] {
+.form-bg1 input[type="submit"] {
     background: #0cd494;
     color: #ffffff;
     font-size: 14px;
     margin-top: 30px;
+    margin-left: 40%;
     border: 1px solid #fff;
     outline: none;
     letter-spacing: 2px;
-    width: 100%;
+    width: 20%;
     padding: 12px 0;
     transition: .5s ease-in;
     -webkit-transition: .5s ease-in;
@@ -1414,12 +1414,13 @@ h5.small-title {
     -ms-transition: .5s ease-in;
 }
 
-.form-bg input[type="submit"]:hover {
-    background: #ffffff;
-    color: #000;
+.form-bg1 input[type="submit"]:hover {
+    background: #252525;
+    color: #0cd494;
 }
 
 .form-bg {
+    width: 47%;
     padding: 4em;
     background: #252525;
     transition: .5s ease-in;
@@ -1428,6 +1429,8 @@ h5.small-title {
     -o-transition: .5s ease-in;
     -ms-transition: .5s ease-in;
 }
+
+
 
 /*-- //contact form --*/
 /*-- //contact --*/
@@ -1440,6 +1443,7 @@ h5.small-title {
 }
 
 .w3ls-social-icons-2 {
+    visibility: hidden;
     float: left;
     width: 32%;
     background: #0cd494;
@@ -3116,8 +3120,21 @@ h5.small-title {
 
 }
 
-/*.clearfix_button{*/
-/*    margin-top: 100px;*/
-/*}*/
+.contact-fields_right {
+    float: right;
+    background-color: #0cd494;
+    /*margin: -50px 0 0 100px ;*/
+
+}
+
+.address select{
+    margin:0 30px 0 10px;
+    width: 25%;
+    height: auto;
+
+}
+.address select:last-child{
+    margin-right:0;
+}
 
 /*--//responsive--*/

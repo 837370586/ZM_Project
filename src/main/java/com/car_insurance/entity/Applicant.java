@@ -3,21 +3,27 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class Applicant {
+
     private Integer applicant_id;
 
     private String applicant_idcard;
 
     private String applicant_name;
 
-    private Integer age;
+    private Integer applicant_age;
 
     private String applicant_phone;
 
-    private String sex;
+    private Integer registered_phone;
 
-    private String address;
+    private String applicant_password;
+
+    private String applicant_sex;
+
+    private String applicant_address;
 
     private Date applicant_time;
+
 
     public Integer getApplicant_id() {
         return applicant_id;
@@ -43,12 +49,12 @@ public class Applicant {
         this.applicant_name = applicant_name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getApplicant_age() {
+        return applicant_age;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setApplicant_age(Integer applicant_age) {
+        this.applicant_age = applicant_age;
     }
 
     public String getApplicant_phone() {
@@ -59,20 +65,36 @@ public class Applicant {
         this.applicant_phone = applicant_phone;
     }
 
-    public String getSex() {
-        return sex;
+    public Integer getRegistered_phone() {
+        return registered_phone;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setRegistered_phone(Integer registered_phone) {
+        this.registered_phone = registered_phone;
     }
 
-    public String getAddress() {
-        return address;
+    public String getApplicant_password() {
+        return applicant_password;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setApplicant_password(String applicant_password) {
+        this.applicant_password = applicant_password;
+    }
+
+    public String getApplicant_sex() {
+        return applicant_sex;
+    }
+
+    public void setApplicant_sex(String applicant_sex) {
+        this.applicant_sex = applicant_sex;
+    }
+
+    public String getApplicant_address() {
+        return applicant_address;
+    }
+
+    public void setApplicant_address(String applicant_address) {
+        this.applicant_address = applicant_address;
     }
 
     public Date getApplicant_time() {
@@ -83,15 +105,19 @@ public class Applicant {
         this.applicant_time = applicant_time;
     }
 
-    public Applicant(Integer applicant_id, String applicant_idcard, String applicant_name, Integer age, String applicant_phone, String sex, String address, Date applicant_time) {
+    public Applicant(Integer applicant_id, String applicant_idcard, String applicant_name, Integer applicant_age, String applicant_phone, Integer registered_phone, String applicant_password, String applicant_sex, String applicant_address, Date applicant_time) {
         this.applicant_id = applicant_id;
         this.applicant_idcard = applicant_idcard;
         this.applicant_name = applicant_name;
-        this.age = age;
+        this.applicant_age = applicant_age;
         this.applicant_phone = applicant_phone;
-        this.sex = sex;
-        this.address = address;
+        this.registered_phone = registered_phone;
+        this.applicant_password = applicant_password;
+        this.applicant_sex = applicant_sex;
+        this.applicant_address = applicant_address;
         this.applicant_time = applicant_time;
     }
-    public Applicant(){};
+
+    public Applicant() {
+    }
 }

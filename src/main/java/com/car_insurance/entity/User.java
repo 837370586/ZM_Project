@@ -58,4 +58,7 @@ public class User {
         this.salt = salt;
         this.phone = phone;
     }
+
+    public User() {
+    }
 }

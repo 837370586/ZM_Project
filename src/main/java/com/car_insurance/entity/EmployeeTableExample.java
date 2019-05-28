@@ -7,9 +7,6 @@ public class EmployeeTableExample extends  EmployeeTable {
     private EmployeeRole employeeRole;
     private Role role;
 
-    public EmployeeTableExample() {
-    }
-
 
     public EmployeeRole getEmployeeRole() {
         return employeeRole;

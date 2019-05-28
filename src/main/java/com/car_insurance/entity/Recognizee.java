@@ -3,21 +3,22 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class Recognizee {
+
     private Integer recognizee_id;
 
     private String recognizee_idcard;
 
-    private String name;
+    private String recognizee_name;
 
-    private Integer age;
+    private Integer recognizee_age;
 
-    private String sex;
+    private String recognizee_sex;
 
-    private String phone;
+    private String recognizee_phone;
 
     private Integer applicant_id;
 
-    private String address;
+    private String recognizee_address;
 
     private String carid;
 
@@ -51,36 +52,36 @@ public class Recognizee {
         this.recognizee_idcard = recognizee_idcard;
     }
 
-    public String getName() {
-        return name;
+    public String getRecognizee_name() {
+        return recognizee_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRecognizee_name(String recognizee_name) {
+        this.recognizee_name = recognizee_name;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getRecognizee_age() {
+        return recognizee_age;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setRecognizee_age(Integer recognizee_age) {
+        this.recognizee_age = recognizee_age;
     }
 
-    public String getSex() {
-        return sex;
+    public String getRecognizee_sex() {
+        return recognizee_sex;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setRecognizee_sex(String recognizee_sex) {
+        this.recognizee_sex = recognizee_sex;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getRecognizee_phone() {
+        return recognizee_phone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setRecognizee_phone(String recognizee_phone) {
+        this.recognizee_phone = recognizee_phone;
     }
 
     public Integer getApplicant_id() {
@@ -91,12 +92,12 @@ public class Recognizee {
         this.applicant_id = applicant_id;
     }
 
-    public String getAddress() {
-        return address;
+    public String getRecognizee_address() {
+        return recognizee_address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setRecognizee_address(String recognizee_address) {
+        this.recognizee_address = recognizee_address;
     }
 
     public String getCarid() {
@@ -163,15 +164,15 @@ public class Recognizee {
         this.recognizee = recognizee;
     }
 
-    public Recognizee(Integer recognizee_id, String recognizee_idcard, String name, Integer age, String sex, String phone, Integer applicant_id, String address, String carid, String car_category, String engine, String vin, Integer insurance_id, String policynumber, String car_owner, Date recognizee) {
+    public Recognizee(Integer recognizee_id, String recognizee_idcard, String recognizee_name, Integer recognizee_age, String recognizee_sex, String recognizee_phone, Integer applicant_id, String recognizee_address, String carid, String car_category, String engine, String vin, Integer insurance_id, String policynumber, String car_owner, Date recognizee) {
         this.recognizee_id = recognizee_id;
         this.recognizee_idcard = recognizee_idcard;
-        this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.phone = phone;
+        this.recognizee_name = recognizee_name;
+        this.recognizee_age = recognizee_age;
+        this.recognizee_sex = recognizee_sex;
+        this.recognizee_phone = recognizee_phone;
         this.applicant_id = applicant_id;
-        this.address = address;
+        this.recognizee_address = recognizee_address;
         this.carid = carid;
         this.car_category = car_category;
         this.engine = engine;
