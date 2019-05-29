@@ -417,7 +417,7 @@ if (typeof jQuery === 'undefined') {
     var $active   = this.$element.find('.item.active')
     var $next     = next || this.getItemForDirection(type, $active)
     var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
+    var direction = type == 'next' ? 'templates.sys.left' : 'right'
     var that      = this
 
     if ($next.hasClass('active')) return (this.sliding = false)
@@ -1288,7 +1288,7 @@ if (typeof jQuery === 'undefined') {
 
   Tooltip.DEFAULTS = {
     animation: true,
-    placement: 'top',
+    placement: 'templates.sys.top',
     selector: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
@@ -1452,7 +1452,7 @@ if (typeof jQuery === 'undefined') {
 
       var autoToken = /\s?auto?\s?/i
       var autoPlace = autoToken.test(placement)
-      if (autoPlace) placement = placement.replace(autoToken, '') || 'top'
+      if (autoPlace) placement = placement.replace(autoToken, '') || 'templates.sys.top'
 
       $tip
         .detach()
@@ -1471,10 +1471,10 @@ if (typeof jQuery === 'undefined') {
         var orgPlacement = placement
         var viewportDim = this.getPosition(this.$viewport)
 
-        placement = placement == 'bottom' && pos.bottom + actualHeight > viewportDim.bottom ? 'top'    :
-                    placement == 'top'    && pos.top    - actualHeight < viewportDim.top    ? 'bottom' :
-                    placement == 'right'  && pos.right  + actualWidth  > viewportDim.width  ? 'left'   :
-                    placement == 'left'   && pos.left   - actualWidth  < viewportDim.left   ? 'right'  :
+        placement = placement == 'bottom' && pos.bottom + actualHeight > viewportDim.bottom ? 'templates.sys.top'    :
+                    placement == 'templates.sys.top'    && pos.top    - actualHeight < viewportDim.top    ? 'bottom' :
+                    placement == 'right'  && pos.right  + actualWidth  > viewportDim.width  ? 'templates.sys.left'   :
+                    placement == 'templates.sys.left'   && pos.left   - actualWidth  < viewportDim.left   ? 'right'  :
                     placement
 
         $tip
@@ -1535,7 +1535,7 @@ if (typeof jQuery === 'undefined') {
     var actualWidth  = $tip[0].offsetWidth
     var actualHeight = $tip[0].offsetHeight
 
-    if (placement == 'top' && actualHeight != height) {
+    if (placement == 'templates.sys.top' && actualHeight != height) {
       offset.top = offset.top + height - actualHeight
     }
 
@@ -1554,8 +1554,8 @@ if (typeof jQuery === 'undefined') {
 
   Tooltip.prototype.replaceArrow = function (delta, dimension, isVertical) {
     this.arrow()
-      .css(isVertical ? 'left' : 'top', 50 * (1 - delta / dimension) + '%')
-      .css(isVertical ? 'top' : 'left', '')
+      .css(isVertical ? 'templates.sys.left' : 'templates.sys.top', 50 * (1 - delta / dimension) + '%')
+      .css(isVertical ? 'templates.sys.top' : 'templates.sys.left', '')
   }
 
   Tooltip.prototype.setContent = function () {
@@ -1632,8 +1632,8 @@ if (typeof jQuery === 'undefined') {
 
   Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
     return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2 } :
-           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
-           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
+           placement == 'templates.sys.top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2 } :
+           placement == 'templates.sys.left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
         /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width }
 
   }
@@ -2257,7 +2257,7 @@ if (typeof jQuery === 'undefined') {
     var position     = this.$element.offset()
     var targetHeight = this.$target.height()
 
-    if (offsetTop != null && this.affixed == 'top') return scrollTop < offsetTop ? 'top' : false
+    if (offsetTop != null && this.affixed == 'templates.sys.top') return scrollTop < offsetTop ? 'templates.sys.top' : false
 
     if (this.affixed == 'bottom') {
       if (offsetTop != null) return (scrollTop + this.unpin <= position.top) ? false : 'bottom'
@@ -2268,7 +2268,7 @@ if (typeof jQuery === 'undefined') {
     var colliderTop    = initializing ? scrollTop : position.top
     var colliderHeight = initializing ? targetHeight : height
 
-    if (offsetTop != null && scrollTop <= offsetTop) return 'top'
+    if (offsetTop != null && scrollTop <= offsetTop) return 'templates.sys.top'
     if (offsetBottom != null && (colliderTop + colliderHeight >= scrollHeight - offsetBottom)) return 'bottom'
 
     return false
@@ -2302,7 +2302,7 @@ if (typeof jQuery === 'undefined') {
     var affix = this.getState(scrollHeight, height, offsetTop, offsetBottom)
 
     if (this.affixed != affix) {
-      if (this.unpin != null) this.$element.css('top', '')
+      if (this.unpin != null) this.$element.css('templates.sys.top', '')
 
       var affixType = 'affix' + (affix ? '-' + affix : '')
       var e         = $.Event(affixType + '.bs.affix')

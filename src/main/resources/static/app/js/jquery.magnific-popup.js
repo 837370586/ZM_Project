@@ -1748,7 +1748,7 @@ $.magnificPopup.registerModule('gallery', {
 			_mfpOn('BuildControls' + ns, function() {
 				if(mfp.items.length > 1 && gSt.arrows && !mfp.arrowLeft) {
 					var markup = gSt.arrowMarkup,
-						arrowLeft = mfp.arrowLeft = $( markup.replace(/%title%/gi, gSt.tPrev).replace(/%dir%/gi, 'left') ).addClass(PREVENT_CLOSE_CLASS),			
+						arrowLeft = mfp.arrowLeft = $( markup.replace(/%title%/gi, gSt.tPrev).replace(/%dir%/gi, 'templates.sys.left') ).addClass(PREVENT_CLOSE_CLASS),
 						arrowRight = mfp.arrowRight = $( markup.replace(/%title%/gi, gSt.tNext).replace(/%dir%/gi, 'right') ).addClass(PREVENT_CLOSE_CLASS);
 
 					var eName = supportsFastClick ? 'mfpFastClick' : 'click';
