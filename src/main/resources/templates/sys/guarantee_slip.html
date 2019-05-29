@@ -1,5 +1,9 @@
 <html>
-<head>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+
+   <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>主要内容区main</title>
 <link href="css/css.css" type="text/css" rel="stylesheet" />
@@ -39,10 +43,10 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
   		<tr>
    		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="">
-	         <span>查询保险：</span>
-	         <input type="text" name="" value="" class="text-word">
-	         <input name="" type="button" value="查询" class="text-but">
+	         <form method="post" action="InsuranceExampleShow">
+	         <span>保险责任：</span>
+	         <input type="text" name="Insurance_id" value="" class="text-word">
+	         <input name="" type="submit" value="查询" class="text-but">
 	         </form>
          </td>
 
@@ -61,11 +65,12 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         <th align="center" valign="middle" class="borderright">保险价格</th>
         <th align="center" valign="middle">操作</th>
       </tr>
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="center" valign="middle" class="borderright borderbottom">123123</td>
-        <td align="center" valign="middle" class="borderright borderbottom">机动车交通事故责任强制保险</td>
-        <td align="center" valign="middle" class="borderright borderbottom">是由保险公司对被保险机动车发生道路交通事故造成受害人(不包括本车人员和被保险人)的人身伤亡、财产损失，在责任限额内予以赔偿的强制性责任保险。交强险是中国首个由国家法律规定实行的强制保险制度。</td>    
-        <td align="center" valign="middle" class="borderright borderbottom">1980</td>
+
+      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'"  th:each="u,var : ${selectAll}" >
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_id}"></td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_details}"></td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_type}"></td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_price}"></td>
         <td align="center" valign="middle" class="borderbottom"><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
       </tr>
     </table></td>

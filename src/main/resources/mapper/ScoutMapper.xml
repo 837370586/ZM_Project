@@ -1,34 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.car_insurance.mapper.ScoutMapper">
-
+<mapper namespace="com.car_insurance.mapper.UsersMapper">
     <select id="selectAllScout" resultType="com.car_insurance.entity.ScoutExample">
-        select
-               scout_id,scout_num,scout_time,accident_type_id,accidentphoto,recognizee_id,loss_situation,Responsibility_judgment,goods_name,goods_price
-        from
-               scout
-    </select>
-    <select id="selectAllIntervice" resultType="com.car_insurance.entity.InterviceExample">
-        select
-                 num,goods_name,goods_price
-        from
-                 intervice
-    </select>
-        <resultMap id="selectCompair" type="com.car_insurance.entity.InterviceExample">
-            <result property="goods_name"  javaType="String" column="goods_name"/>
-            <result property="goods_price" javaType="double" column="goods_price"/>
-        <association property="scout" javaType="com.car_insurance.entity.ScoutExample">
-            <result property="goods_name"  javaType="String" column="goods_name"/>
-            <result property="goods_price" javaType="double" column="goods_price"/>
-        </association>
-        </resultMap>
-        <select id="selectPrice" resultMap="selectCompair">
 
-              select
-                     s.`goods_name`,i.`goods_name`,s.`goods_price`,i.`goods_price`
-              from
-                     scout s inner join intervice i on s.`scout_id`=i.`scout_id`
+        select * from scout
 
-        </select>
+
+    </select>
 
 </mapper>

@@ -147,18 +147,15 @@
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
 						<tr>
 							<td width="90%" align="left" valign="middle">
-								<form method="post"  action="RecognizeeShow" >
-									<span>请输入被保险人身份证查询保单：</span>
-									<input type="text" class="text-word" name="recognizee_idcard" >
-									<input type="submit" value="查询" class="text-but">
+								<form method="post" action="RecognizeeExampleShow">
+									<span>请输入被保险人车牌号查询保单：</span>
+									<input type="text" name="carid" value="" class="text-word">
+									<input name="" type="submit" value="查询" class="text-but">
 								</form>
 							</td>
 
 
 						</tr>
-
-
-
 
 					</table>
 				</td>
@@ -186,7 +183,7 @@
 							<th align="center" valign="middle" class="borderright">保险购买时间</th>
 							<th align="center" valign="middle">操作</th>
 						</tr>
-						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'" th:each="u,var : ${selectList}" >
+						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'" th:each="u,var : ${showList}" >
 			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_id}"></td>
 			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_idcard}"></td>
 			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_name}"></td>
@@ -222,7 +219,6 @@
 						</td>
 					</tr>
 		</table>
-
 	</body>
 
 </html>

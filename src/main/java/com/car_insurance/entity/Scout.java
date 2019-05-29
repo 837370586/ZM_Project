@@ -11,7 +11,7 @@ public class Scout {
 
     private Integer accident_type_id;
 
-    private String accidentphoto;
+    private String accidentPhoto;
 
     private Integer recognizee_id;
 
@@ -19,9 +19,19 @@ public class Scout {
 
     private String responsibility_judgment;
 
-    private String goods_name;
+    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentPhoto, Integer recognizee_id, String loss_situation, String responsibility_judgment) {
+        this.scout_id = scout_id;
+        this.scout_num = scout_num;
+        this.scout_time = scout_time;
+        this.accident_type_id = accident_type_id;
+        this.accidentPhoto = accidentPhoto;
+        this.recognizee_id = recognizee_id;
+        this.loss_situation = loss_situation;
+        this.responsibility_judgment = responsibility_judgment;
+    }
 
-    private Double goods_price;
+    public Scout() {
+    }
 
     public Integer getScout_id() {
         return scout_id;
@@ -55,12 +65,12 @@ public class Scout {
         this.accident_type_id = accident_type_id;
     }
 
-    public String getAccidentphoto() {
-        return accidentphoto;
+    public String getAccidentPhoto() {
+        return accidentPhoto;
     }
 
-    public void setAccidentphoto(String accidentphoto) {
-        this.accidentphoto = accidentphoto;
+    public void setAccidentPhoto(String accidentPhoto) {
+        this.accidentPhoto = accidentPhoto;
     }
 
     public Integer getRecognizee_id() {
@@ -87,35 +97,4 @@ public class Scout {
         this.responsibility_judgment = responsibility_judgment;
     }
 
-    public String getGoods_name() {
-        return goods_name;
-    }
-
-    public void setGoods_name(String goods_name) {
-        this.goods_name = goods_name;
-    }
-
-    public Double getGoods_price() {
-        return goods_price;
-    }
-
-    public void setGoods_price(Double goods_price) {
-        this.goods_price = goods_price;
-    }
-
-    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentphoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, String goods_name, Double goods_price) {
-        this.scout_id = scout_id;
-        this.scout_num = scout_num;
-        this.scout_time = scout_time;
-        this.accident_type_id = accident_type_id;
-        this.accidentphoto = accidentphoto;
-        this.recognizee_id = recognizee_id;
-        this.loss_situation = loss_situation;
-        this.responsibility_judgment = responsibility_judgment;
-        this.goods_name = goods_name;
-        this.goods_price = goods_price;
-    }
-    public Scout(){
-
-    }
 }
