@@ -43,7 +43,7 @@
         slider.syncExists = $(vars.sync).length > 0;
         // SLIDE:
         if (vars.animation === "slide") vars.animation = "swing";
-        slider.prop = (vertical) ? "top" : "marginLeft";
+        slider.prop = (vertical) ? "templates.sys.top" : "marginLeft";
         slider.args = {};
         // SLIDESHOW:
         slider.manualPause = false;
@@ -669,13 +669,13 @@
           slider.setProps(sliderOffset * slider.computedW, "init");
           setTimeout(function(){
             slider.doMath();
-            slider.newSlides.css({"width": slider.computedW, "float": "left", "display": "block"});
+            slider.newSlides.css({"width": slider.computedW, "float": "templates.sys.left", "display": "block"});
             // SMOOTH HEIGHT:
             if (vars.smoothHeight) methods.smoothHeight();
           }, (type === "init") ? 100 : 0);
         }
       } else { // FADE: 
-        slider.slides.css({"width": "100%", "float": "left", "marginRight": "-100%", "position": "relative"});
+        slider.slides.css({"width": "100%", "float": "templates.sys.left", "marginRight": "-100%", "position": "relative"});
         if (type === "init") {
           if (!touch) {
             slider.slides.eq(slider.currentSlide).fadeIn(vars.animationSpeed, vars.easing);
