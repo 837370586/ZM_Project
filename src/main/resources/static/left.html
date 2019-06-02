@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左侧导航menu</title>
+<link href="./css/css.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="./js/sdmenu.js"></script>
+<script type="text/javascript">
+	// <![CDATA[
+	var myMenu;
+	window.onload = function() {
+		myMenu = new SDMenu("my_menu");
+		myMenu.init();
+	};
+	// ]]>
+</script>
+<style type=text/css>
+html{ SCROLLBAR-FACE-COLOR: #538ec6; SCROLLBAR-HIGHLIGHT-COLOR: #dce5f0; SCROLLBAR-SHADOW-COLOR: #2c6daa; SCROLLBAR-3DLIGHT-COLOR: #dce5f0; SCROLLBAR-ARROW-COLOR: #2c6daa;  SCROLLBAR-TRACK-COLOR: #dce5f0;  SCROLLBAR-DARKSHADOW-COLOR: #dce5f0; overflow-x:hidden;}
+body{overflow-x:hidden; background:url(./images/main/leftbg.jpg) left top repeat-y #f2f0f5; width:194px;}
+</style>
+</head>
+<body onselectstart="return false;" ondragstart="return false;" oncontextmenu="return false;">
+<div id="left-top">
+	<div><img src="images/main/member.gif" width="44" height="44" /></div>
+    <span>用户：admin<br>角色：超级管理员</span>
+</div>
+    <div style="float: left" id="my_menu" class="sdmenu">
+      <div class="collapsed">
+        <span>客户报案中心</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
+        <a href="/warranty" target="mainFrame" onFocus="this.blur()">查询保单信息</a>
+        <a href="/guarantee_slip" target="mainFrame" onFocus="this.blur()">查询保险详细信息</a>
+        <a href="/work_order" target="mainFrame" onFocus="this.blur()">工单生成</a>
+      </div>
+      <div>
+        <span>现场勘察</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
+        <a href="/select_work_oder" target="mainFrame" onFocus="this.blur()">查询工单</a>
+        <a href="/exploration_man" target="mainFrame" onFocus="this.blur()">勘探员工信息</a>
+        <a href="/exploration_Add" target="mainFrame" onFocus="this.blur()">勘探信息添加</a>
+      </div>
+      <div>
+        <span>审核（核保）</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
+        <a href="/analyze_ktOrder" target="mainFrame" onFocus="this.blur()">分析订单</a>
+        <a href="/verify" target="mainFrame" onFocus="this.blur()">审核核对</a>
+      </div>
+      <div>
+        <span>业务跟进员</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">分组权限</a>
+        <a href="main_list.html" target="mainFrame" onFocus="this.blur()">级别权限</a>
+        <a href="main_info.html" target="mainFrame" onFocus="this.blur()">角色管理</a>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">自定义权限</a>
+      </div>
+       <div>
+        <span>超级管理员</span>
+        <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
+        <a href="/insureMan" target="mainFrame" onFocus="this.blur()">查询投保人信息</a>
+        <a href="/guaranteeSlip" target="mainFrame" onFocus="this.blur()">查询保单信息</a>
+        <a href="/select_staff" target="mainFrame" onFocus="this.blur()">查询员工信息</a>
+        <a href="/selectWorkOder" target="mainFrame" onFocus="this.blur()">查询工单</a>
+        <a href="/exploration_order" target="mainFrame" onFocus="this.blur()">查询勘探订单</a>
+      </div>
+    </div>
+</body>
+</html>
