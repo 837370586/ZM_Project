@@ -147,7 +147,7 @@
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
 						<tr>
 							<td width="90%" align="left" valign="middle">
-								<form method="post"  action="RecognizeeShow" >
+								<form method="post"  action="getAllPerson" >
 									<span>请输入被保险人身份证查询保单：</span>
 									<input type="text" class="text-word" name="recognizee_idcard" >
 									<input type="submit" value="查询" class="text-but">
@@ -186,40 +186,40 @@
 							<th align="center" valign="middle" class="borderright">保险购买时间</th>
 							<th align="center" valign="middle">操作</th>
 						</tr>
-						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'" th:each="u,var : ${selectList}" >
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_id}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_idcard}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_name}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_age}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_sex}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_phone}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.applicant_id}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_address}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.carid}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.car_category}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.engine}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.vin}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.insurance_id}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.policynumber}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.car_owner}"></td>
-			<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee}"></td>
+						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'" th:each="u,var : ${pageInfo.list}" >
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_id}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_idcard}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_name}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_age}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_sex}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_phone}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.applicant_id}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_address}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.carid}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.car_category}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.engine}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.vin}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.insurance_id}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.policynumber}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.car_owner}"></td>
+									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee}"></td>
 
 
-			<td align="center" valign="middle" class="borderbottom">
+											<td align="center" valign="middle" class="borderbottom">
 				<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span>
 				<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a>
 			</td>
 		</tr>
 
 		</table>
-		<tr>
-
-						<td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a>
-						</td>
+		<tr >
+			<td align="left" valign="top" class="fenye">&nbsp;&nbsp;
+				<p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+				<a th:href="@{/getAllPerson}">首页</a>
+				<a th:href="@{/getAllPerson(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
+				<a th:href="@{/getAllPerson(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
+				<a th:href="@{/getAllPerson(pageNum=${pageInfo.pages})}">尾页</a>
+		    </td>
 					</tr>
 		</table>
 

@@ -19,7 +19,11 @@ public class Scout {
 
     private String responsibility_judgment;
 
-    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentPhoto, Integer recognizee_id, String loss_situation, String responsibility_judgment) {
+    private Integer state_id;
+
+    private  String damagedParts;
+
+    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentPhoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, Integer state_id, String damagedParts) {
         this.scout_id = scout_id;
         this.scout_num = scout_num;
         this.scout_time = scout_time;
@@ -28,6 +32,8 @@ public class Scout {
         this.recognizee_id = recognizee_id;
         this.loss_situation = loss_situation;
         this.responsibility_judgment = responsibility_judgment;
+        this.state_id = state_id;
+        this.damagedParts = damagedParts;
     }
 
     public Scout() {
@@ -97,4 +103,19 @@ public class Scout {
         this.responsibility_judgment = responsibility_judgment;
     }
 
+    public Integer getState_id() {
+        return state_id;
+    }
+
+    public void setState_id(Integer state_id) {
+        this.state_id = state_id;
+    }
+
+    public String getDamagedParts() {
+        return damagedParts;
+    }
+
+    public void setDamagedParts(String damagedParts) {
+        this.damagedParts = damagedParts;
+    }
 }

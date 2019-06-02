@@ -1,9 +1,6 @@
 package com.car_insurance.service;
 
-import com.car_insurance.entity.InsuranceExample;
-import com.car_insurance.entity.Recognizee;
-import com.car_insurance.entity.RecognizeeExample;
-import com.car_insurance.entity.WorkOrderExample;
+import com.car_insurance.entity.*;
 
 import java.util.List;
 /*
@@ -14,11 +11,18 @@ public interface RecognizeeExampleService {
     List<RecognizeeExample> selectAllRecognizeeExample(String carid);
 
     //生成工单的方法
-    public  WorkOrderExample  addWorkorder();
+    public  void   addWorkorder(WorkOrderExample workOrderExample);
 
     //查询被保险人的方法
     List<RecognizeeExample> selectAllRecognizee(String recognizee_idcard);
 
     //查询保险详细信息
     List<InsuranceExample> selectAllInsuranceExample(Integer insurance_id);
+
+    //接受工单
+    List<WorkOrderExample>selectWorkOder(  );
+
+    //勘察信息添加
+
+    void addScoutExample (ScoutExample scoutExample);
 }

@@ -1,9 +1,6 @@
 package com.car_insurance.service.impl;
 
-import com.car_insurance.entity.InsuranceExample;
-import com.car_insurance.entity.Recognizee;
-import com.car_insurance.entity.RecognizeeExample;
-import com.car_insurance.entity.WorkOrderExample;
+import com.car_insurance.entity.*;
 import com.car_insurance.mapper.RecognizeeExampleMapper;
 import com.car_insurance.service.RecognizeeExampleService;
 import org.springframework.stereotype.Service;
@@ -26,8 +23,8 @@ public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
     }
 
     //生成工单的方法
-    public WorkOrderExample  addWorkorder() {
-        return pem.addWorkorder( );
+    public void   addWorkorder(WorkOrderExample workOrderExample) {
+        pem.addWorkorder(workOrderExample);
     }
 
 
@@ -42,4 +39,16 @@ public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
 
         return pem.selectAllInsuranceExample(insurance_id);
     }
+    //接受工单
+    public List<WorkOrderExample>selectWorkOder( ){
+
+        return pem.selectWorkOder();
+    }
+
+    //勘察信息添加
+    public void addScoutExample (ScoutExample scoutExample){
+
+        pem.addScoutExample(scoutExample);
+    }
+
 }
