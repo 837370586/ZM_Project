@@ -3518,7 +3518,7 @@ jQuery.ready.promise = function( obj ) {
 						try {
 							// Use the trick by Diego Perini
 							// http://javascript.nwbox.com/IEContentLoaded/
-							top.doScroll("static.app.left");
+							top.doScroll("templates.sys.left");
 						} catch(e) {
 							return setTimeout( doScrollCheck, 50 );
 						}
@@ -10032,8 +10032,8 @@ jQuery.offset = {
 		}
 
 		curOffset = curElem.offset();
-		curCSSTop = jQuery.css( elem, "static.app.top" );
-		curCSSLeft = jQuery.css( elem, "static.app.left" );
+		curCSSTop = jQuery.css( elem, "templates.sys.top" );
+		curCSSLeft = jQuery.css( elem, "templates.sys.left" );
 		calculatePosition = ( position === "absolute" || position === "fixed" ) &&
 			jQuery.inArray("auto", [ curCSSTop, curCSSLeft ] ) > -1;
 
@@ -10184,7 +10184,7 @@ jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( 
 // Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
 // getComputedStyle returns percent when specified for top/left/bottom/right
 // rather than make the css module depend on the offset module, we just check for it here
-jQuery.each( [ "static.app.top", "static.app.left" ], function(i, prop ) {
+jQuery.each( [ "templates.sys.top", "templates.sys.left" ], function(i, prop ) {
 	jQuery.cssHooks[ prop ] = addGetHookIf( support.pixelPosition,
 		function( elem, computed ) {
 			if ( computed ) {

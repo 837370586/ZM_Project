@@ -6,9 +6,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>主要内容区main</title>
-		<link href="../../static/app/css/css.css" type="text/css" rel="stylesheet" />
-		<link href="../../static/app/css/main.css" type="text/css" rel="stylesheet" />
-		<link rel="shortcut icon" href="../static/images/main/favicon.ico" />
+		<link th:href="@{css/css.css}" type="text/css" rel="stylesheet" />
+		<link th:href="@{css/main.css}" type="text/css" rel="stylesheet" />
+		<link rel="shortcut icon" th:href="@{images/main/favicon.ico}" />
+
 		<style>
 			body {
 				overflow-x: hidden;
@@ -51,7 +52,7 @@
 				height: 24px;
 				line-height: 24px;
 				width: 55px;
-				background: url(../../static/app/images/main/list_input.jpg) no-repeat left top;
+				background: url(../../static/images/main/list_input.jpg) no-repeat left top;
 				border: none;
 				cursor: pointer;
 				font-family: "Microsoft YaHei", "Tahoma", "Arial", '宋体';
@@ -62,7 +63,7 @@
 			}
 			
 			#search a.add {
-				background: url(../../static/app/images/main/add.jpg) no-repeat -3px 7px #548fc9;
+				background: url(../../static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
 				padding: 0 10px 0 26px;
 				height: 40px;
 				line-height: 40px;
@@ -85,7 +86,7 @@
 			
 			#main-tab th {
 				font-size: 12px;
-				background: url(../../static/app/images/main/list_bg.jpg) repeat-x;
+				background: url(../../static/images/main/list_bg.jpg) repeat-x;
 				height: 32px;
 				line-height: 32px;
 			}
