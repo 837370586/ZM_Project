@@ -1,4 +1,4 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>主要内容区main</title>
@@ -40,7 +40,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 </style>
 </head>
 <body style="background-color: #f1f1f1;">
-	<form action="" method="post" >
+	<form action="insertOneShow" method="post" >
 <table width="98%" height="90%" border="0" align="center" cellpadding="0" cellspacing="1" >
   <!--<tr>
     <td height="22" colspan="4" background="images/bg.gif" bgcolor="#FFFFFF" class="STYLE3"><div align="center"></div></td>
@@ -49,38 +49,41 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     <td width="99%" align="left" valign="top">您的位置：工单生成</td>
   </tr>
   <tr>
-    <td colspan="4" class="STYLE1"><table width="70%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin: auto;">
+    <td colspan="4" class="STYLE1"><table width="70%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin: auto;" >
        <tr>
-        <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left">请输入员工ID</div></td>
+           <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left" >  请输入员工ID</div></td>
+        <td height="100" colspan="3" class="STYLE1"><div align="left">
+          <input type="text"   style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " name="employee_id"/>
+        </div></td>
+        </tr>
+      <!--<tr>
+        <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left" name="work_order_number">请输入工单号</div></td>
         <td height="100" colspan="3" class="STYLE1"><div align="left">
           <input type="text" name="textfield3"   style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " />
         </div></td>
-        </tr>
+        </tr>-->
       <tr>
-        <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left">请输入工单号</div></td>
+        <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left" >请输入保单号</div></td>
         <td height="100" colspan="3" class="STYLE1"><div align="left">
-          <input type="text" name="textfield3"   style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " />
-        </div></td>
-        </tr>
-      <tr>
-        <td width="142" height="35" class="STYLE1" nowrap="nowrap"><div align="left">请输入被保人ID</div></td>
-        <td height="100" colspan="3" class="STYLE1"><div align="left">
-          <input type="text" name="textfield4"   style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " />
+          <input type="text"    style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " name="policyNumber"/>
         </div></td>
        </tr>
       <tr>
         <td width="142" height="35" class="STYLE1"><div align="center" nowrap="nowrap">
-          <div align="left">事故地点</div>
-        </div></td>
+          <div align="left" >事故地点</div>
+        </div>
+        </td>
         <td height="35" colspan="3" class="STYLE1"><div align="left" style="margin-top: 40px;">
-          <textarea name="textarea"  style=" width:600px; height:100px;"></textarea>
-        </div></td>
+          <input   style=" width:600px; height:100px;" name="accident_spot"></input>
+        </div>
+        </td>
         </tr>
       <tr>
         <td height="40" class="STYLE1">&nbsp;</td>
-        <td height="35" colspan="3" class="STYLE1"><input type="submit" name="" id="submit" value="提交" /></td>
+        <td height="35" colspan="3" class="STYLE1"><input type="submit" name="" value="提交" onclick=""/></td>
       </tr>
     </table></td>
+
   </tr>
 </table>
 </form>

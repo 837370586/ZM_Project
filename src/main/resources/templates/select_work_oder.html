@@ -1,4 +1,6 @@
 <html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>主要内容区main</title>
@@ -32,20 +34,20 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
 <!--main_top-->
 <table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
   <tr>
-    <td width="99%" align="left" valign="top">您的位置：投保人信息</td>
+    <td width="99%" align="left" valign="top">您的位置：未处理信息</td>
   </tr>
   <tr>
     <td align="left" valign="top">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
-  		<tr>
+  		<!--<tr>
    		 <td width="90%" align="left" valign="middle">
-	         <form method="post" action="">
+	         <form method="post" action="WorkOrderExampleShow">
 	         <span>工单搜索：</span>
 	         <input type="text" name="" value="" class="text-word">
 	         <input name="" type="button" value="查询" class="text-but">
 	         </form>
          </td>
-  		</tr>
+  		</tr>-->
 	</table>
     </td>
   </tr>
@@ -54,23 +56,34 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
       <tr>
-        <th align="center" valign="middle" class="borderright">工单ID</th>
+        <th align="center" valign="middle" class="borderright">工单状态</th>
         <th align="center" valign="middle" class="borderright">员工ID</th>
         <th align="center" valign="middle" class="borderright">工单号</th>
-        <th align="center" valign="middle" class="borderright">被保人ID</th>
+        <th align="center" valign="middle" class="borderright">保单号</th>
         <th align="center" valign="middle" class="borderright">事故地点</th>
       </tr>
-      <tr class="bggray" onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-        <td align="center" valign="middle" class="borderright borderbottom">1</td>
-        <td align="center" valign="middle" class="borderright borderbottom">122</td>
-        <td align="center" valign="middle" class="borderright borderbottom">122</td>
-        <td align="center" valign="middle" class="borderright borderbottom">122</td>
-        <td align="center" valign="middle" class="borderbottom"><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span><a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a></td>
+      <tr class="bggray" onMouseOut="this.style.backgroundColor='#f9f9f9'" onMouseOver="this.style.backgroundColor='#edf5ff'"  th:each="u,var : ${pageInfo.list}">
+
+          <td align="center" valign="middle" class="borderright borderbottom "th:if="${u.work_order_id}==0">
+            <span>未处理</span>
+        </td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.employee_id}"></td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.work_order_number}"></td>
+        <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.policyNumber}">
+
+        </td><td align="center" valign="middle" class="borderright borderbottom"th:text="${u.accident_spot}"></td>
       </tr>
     </table></td>
     </tr>
   <tr>
-    <td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a></td>
+    <td align="left" valign="top" class="fenye">
+        <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+        <a th:href="@{/WorkOrderExampleShow}">首页</a>
+        <a th:href="@{/WorkOrderExampleShow(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
+        <a th:href="@{/WorkOrderExampleShow(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
+        <a th:href="@{/WorkOrderExampleShow(pageNum=${pageInfo.pages})}">尾页</a>
+
+    </td>
   </tr>
 </table>
 </body>

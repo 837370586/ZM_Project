@@ -66,7 +66,7 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
         <th align="center" valign="middle">操作</th>
       </tr>
 
-      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'"  th:each="u,var : ${selectAll}" >
+      <tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'"  th:each="u,var : ${pageInfo.list}" >
         <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_id}"></td>
         <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_details}"></td>
         <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.insurance_type}"></td>
@@ -76,7 +76,14 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     </table></td>
     </tr> 
     <tr>
-    <td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a></td>
+    <td align="left" valign="top" class="fenye">
+        <p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+        <a th:href="@{/InsuranceExampleShow}">首页</a>
+        <a th:href="@{/InsuranceExampleShow(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
+        <a th:href="@{/InsuranceExampleShow(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
+        <a th:href="@{/InsuranceExampleShow(pageNum=${pageInfo.pages})}">尾页</a>
+
+    </td>
   </tr>
 </table>
 

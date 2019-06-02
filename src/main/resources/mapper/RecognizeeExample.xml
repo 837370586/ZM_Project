@@ -28,18 +28,18 @@
         SELECT
             recognizee,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
         FROM
-            recognizee WHERE carid=#{carid}
+            xiangmu.recognizee WHERE carid=#{carid}
     </select>
 
 
 
-    <!--添加 工单的方法自动生成工单号-->
-    <insert id="addWorkorder">
+    <!--添加 工单的方法自动生成工单号--><!--parameterType页面给后台传值用-->
+    <insert id="addWorkorder" parameterType="com.car_insurance.entity.WorkOrder">
          INSERT
          INTO
-             work_order(employee_id,recognizee_id,accident_spot)
+             xiangmu.workOrder(employee_id,policyNumber,accident_spot)
          VALUES
-              (#{employee_id},#{recognizee_id},#{accident_spot})
+              (#{employee_id},#{policyNumber},#{accident_spot})
     </insert>
 
     <!--查询被保险人的方法-->
@@ -48,7 +48,7 @@
         SELECT
             recognizee_id,recognizee,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
         FROM
-             recognizee where recognizee_idcard=#{recognizee_idcard}
+            xiangmu.recognizee where recognizee_idcard=#{recognizee_idcard}
 
     </select>
     <!--/查询保险详细信息-->
@@ -56,8 +56,26 @@
         select
                `insurance_id`,`insurance_details`,`insurance_type`,`insurance_price`
         from
-             insurance
+            xiangmu. insurance
         where
               insurance_id=#{insurance_id}
     </select>
+    <!--查询所有未处理工单的方法-->
+    <select id="selectWorkOder" resultType="com.car_insurance.entity.WorkOrderExample">
+        SELECT
+               employee_id,work_order_number,policyNumber,accident_spot,work_order_id
+        FROM
+             workOrder
+        WHERE
+              work_order_id=0
+
+    </select>
+    <insert id="addScoutExample" parameterType="com.car_insurance.entity.WorkOrderExample">
+        INSERT
+        INTO
+              scout(scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,damagedParts)
+        VALUES
+               (#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{damagedParts})
+
+    </insert>
 </mapper>
