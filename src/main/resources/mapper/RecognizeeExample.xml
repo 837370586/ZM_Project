@@ -3,54 +3,87 @@
 <mapper namespace="com.car_insurance.mapper.RecognizeeExampleMapper" >
 
     <!--胡敏-->
-    <!--根据车牌号查是否在我公司买过保险-->
+    <!--&lt;!&ndash;根据车牌号查是否在我公司买过保险&ndash;&gt;
     <resultMap type="com.car_insurance.entity.RecognizeeExample" id="Rem">
-    <!--第一张表的映射信息  -->
+    &lt;!&ndash;第一张表的映射信息  &ndash;&gt;
         <result property="carid" javaType="String" column="carid"/>
 
         <result property="applicant_id" javaType="Integer" column="applicant_id"/>
-    <!--第二张表的映射信息  -->
+    &lt;!&ndash;第二张表的映射信息  &ndash;&gt;
         <association property="applicant" javaType="com.car_insurance.entity.ApplicantExample" >
 
             <result property="applicant_idcard" javaType="String" column="applicant_idcard"/>
             <result property="applicant_name" javaType="String" column="applicant_name"/>
 
-            <result property="age" javaType="Integer" column="age"/>
+            <result property="applicant_age" javaType="Integer" column="applicant_age"/>
             <result property="applicant_phone" javaType="String" column="applicant_phone"/>
-            <result property="sex" javaType="String" column="sex"/>
-            <result property="address" javaType="String" column="address"/>
+            <result property="applicant_sex" javaType="String" column="applicant_sex"/>
+            <result property="applicant_address" javaType="String" column="applicant_address"/>
             <result property="applicant_time" javaType="String" column="applicant_time"/>
 
         </association>
-    </resultMap >
+    </resultMap >-->
 
-    <select id="selectAllRecognizeeExample"  resultType="com.car_insurance.entity.ApplicantExample">
+    <select id="selectAllRecognizeeExample"  resultType="com.car_insurance.entity.RecognizeeExample">
         SELECT
-            a.`applicant_idcard`,a.`applicant_name`,a.`age`,a.`applicant_phone`,a.`sex`,a.`address`,a.`applicant_time`
+            recognizee_id,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
         FROM
-             applicant a LEFT JOIN recognizee r ON a.`applicant_id`=r.`applicant_id`
-        WHERE
-              r.`carid`=${carid}
+            xiangmu.recognizee WHERE carid=#{carid}
     </select>
 
 
 
-    <!--添加 工单的方法自动生成工单号-->
-    <insert id="addWorkorder">
+    <!--添加 工单的方法自动生成工单号--><!--parameterType页面给后台传值用-->
+    <insert id="addWorkorder" parameterType="com.car_insurance.entity.WorkOrder">
          INSERT
          INTO
-             work_order(employee_id,work_order_number,recognizee_id,accident_spot)
+             xiangmu.workOrder(employee_id,policyNumber,accident_spot)
          VALUES
-              (#{employee_id},#{work_order_number},#{recognizee_id},#{accident_spot})
+              (#{employee_id},#{policyNumber},#{accident_spot})
     </insert>
 
     <!--查询被保险人的方法-->
     <select id="selectAllRecognizee" resultType="com.car_insurance.entity.RecognizeeExample">
 
         SELECT
-               recognizee,recognizee_idcard,NAME,age,sex,phone,applicant_id,address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
+            recognizee_id,recognizee,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
         FROM
-             recognizee
+            xiangmu.recognizee where recognizee_idcard=#{recognizee_idcard}
 
     </select>
+    <!--/查询保险详细信息-->
+    <select id="selectAllInsuranceExample" resultType="com.car_insurance.entity.InsuranceExample">
+        select
+               `insurance_id`,`insurance_details`,`insurance_type`,`insurance_price`
+        from
+            xiangmu. insurance
+        where
+              insurance_id=#{insurance_id}
+    </select>
+    <!--查询所有未处理工单的方法-->
+    <select id="selectWorkOder" resultType="com.car_insurance.entity.WorkOrderExample">
+        SELECT
+               employee_id,work_order_number,policyNumber,accident_spot,work_order_id
+        FROM
+             workOrder
+        WHERE
+              work_order_id=0
+
+    </select>
+    <!--添加勘察信息的方法-->
+    <insert id="addScoutExample" parameterType="com.car_insurance.entity.ScoutExample">
+
+
+        INSERT
+        INTO
+
+
+                 xiangmu.scout(scout_id,scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,glass,tire,carDoor,engineId,bumper,tiremoney,carDoormoney,engineIdmoney,bumpermoney,glassmoney)
+                  VALUES
+                  (#{scout_id},#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{glass},#{tire},#{carDoor},#{engineId},#{bumper},#{tiremoney},#{carDoormoney},#{engineIdmoney},#{bumpermoney},#{glassmoney})
+
+
+
+    </insert>
+
 </mapper>

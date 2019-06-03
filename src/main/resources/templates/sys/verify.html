@@ -1,12 +1,12 @@
-<html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"/>
-<html xmlns:th="http://www.thymeleaf.org"/>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>主要内容区main</title>
 		<link th:href="@{css/css.css}" type="text/css" rel="stylesheet" />
 		<link th:href="@{css/main.css}" type="text/css" rel="stylesheet" />
 		<link rel="shortcut icon" th:href="@{images/main/favicon.ico}" />
+
 		<style>
 			body {
 				overflow-x: hidden;
@@ -49,7 +49,7 @@
 				height: 24px;
 				line-height: 24px;
 				width: 55px;
-				background: url(static/images/main/list_input.jpg) no-repeat left top;
+				background: url(../../static/images/main/list_input.jpg) no-repeat left top;
 				border: none;
 				cursor: pointer;
 				font-family: "Microsoft YaHei", "Tahoma", "Arial", '宋体';
@@ -60,7 +60,7 @@
 			}
 			
 			#search a.add {
-				background: url(static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
+				background: url(../../static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
 				padding: 0 10px 0 26px;
 				height: 40px;
 				line-height: 40px;
@@ -83,7 +83,7 @@
 			
 			#main-tab th {
 				font-size: 12px;
-				background: url(static/images/main/list_bg.jpg) repeat-x;
+				background: url(../../static/images/main/list_bg.jpg) repeat-x;
 				height: 32px;
 				line-height: 32px;
 			}
@@ -159,72 +159,44 @@
 							<th align="center" valign="middle" class="borderright">报损零件名称</th>
 							<th align="center" valign="middle" class="borderright">报损零件价格</th>
 						</tr>
-						<tr th:each="dpe:${dpe}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.glass}"></td>
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.glassmoney}"></td>
-						</tr>
-						<tr th:each="dpe:${dpe}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.tire}"></td>
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.tiremoney}"></td>
-						</tr>
-						<tr th:each="dpe:${dpe}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.carDoor}"></td>
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.carDoormoney}"></td>
-						</tr>
-						<tr th:each="dpe:${dpe}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.engineId}"></td>
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.engineIdmoney}"></td>
-						</tr>
-						<tr th:each="dpe:${dpe}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.bumper}"></td>
-							<td align="center" valign="middle" class="borderright borderbottom" th:text="${dpe.bumpermoney}"></td>
+						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+							<td align="center" valign="middle" class="borderright borderbottom">1</td>
+							<td align="center" valign="middle" class="borderright borderbottom">木之本樱</td>
 						</tr>
 					</table>
 				</td>
 		</table>
+		
 		<table width="40%" border="0" cellspacing="0" cellpadding="0" id="searchmain" style="float: right;margin-right: 50px;">
-				<tr>
-					<td width="99%" align="left" valign="top">市场零件表</td>
-				</tr>
-				<tr>
-					<td align="left" valign="top">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
-							<tr>
-								<td width="20%" align="left" valign="middle"></td>
-								<td width="8%" align="right" valign="middle"></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-
-				<tr>
-					<td align="left" valign="top">
-						<table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
-							<tr>
-								<th align="center" valign="middle" class="borderright">市场零件名称</th>
-								<th align="center" valign="middle" class="borderright">市场零件价格</th>
-							</tr>
-							<tr th:each="pageInfo:${pageInfo.list}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-								<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.goods_name}" ></td>
-								<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.goods_price}"></td>
-							</tr>
-						</table>
-				<tr >
-					<td align="left" valign="top" class="fenye" >&nbsp;&nbsp;
-						<p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
-						<a th:href="@{/interviceShow(scout_id=${scout_id})}" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
-						<a th:href="@{/interviceShow(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1,scout_id=${scout_id})}" target="mainFrame" onFocus="this.blur()" >上一页</a>&nbsp;&nbsp;
-						<a th:href="@{/interviceShow(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages},scout_id=${scout_id})}" target="mainFrame" onFocus="this.blur()" >下一页</a>&nbsp;&nbsp;
-						<a th:href="@{/interviceShow(pageNum=${pageInfo.pages},scout_id=${scout_id})}" target="mainFrame" onFocus="this.blur()">尾页</a>
-					</td>
-				</tr>
+			<tr>
+				<td width="99%" align="left" valign="top">市场零件表</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
+						<tr>
+							<td width="20%" align="left" valign="middle"></td>
+							<td width="8%" align="right" valign="middle"></td>
+						</tr>
+					</table>
 				</td>
-			</table>
-
-
-
-		<input name="" type="button" value="提交"  style="width: 60px;height: 35px; position: absolute; bottom: 100px;" >
-        <input name="" type="button" value="驳回"  style="width: 60px;height: 35px; position: absolute; bottom: 100px; right: 650px;">		
+			</tr>
+			<tr>
+				<td align="left" valign="top">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
+						<tr>
+							<th align="center" valign="middle" class="borderright">市场零件名称</th>
+							<th align="center" valign="middle" class="borderright">市场零件价格</th>
+						</tr>
+						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+							<td align="center" valign="middle" class="borderright borderbottom">1</td>
+							<td align="center" valign="middle" class="borderright borderbottom">木之本樱</td>
+						</tr>
+					</table>
+				</td>
+		</table>
+		<input name="" type="button" value="提交"  style="width: 60px;height: 35px; position: absolute; bottom: 100px; right: 650px">
+        <input name="" type="button" value="驳回"  style="width: 60px;height: 35px; position: absolute; bottom: 100px; right: 500px;">
 	</body>
 
 </html>

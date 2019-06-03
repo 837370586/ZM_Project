@@ -36,7 +36,6 @@ public class Intervice {
         this.goods_name = goods_name;
         this.goods_price = goods_price;
     }
-
     public Intervice(){
 
 

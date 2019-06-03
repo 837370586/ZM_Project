@@ -3,34 +3,22 @@
 <mapper namespace="com.car_insurance.mapper.BossMapper">
 
     <!--周小东-->
+    
 
-    <resultMap id="BossMap" type="com.car_insurance.entity.EmployeeTableExample">
-        <id column="employee_id" property="employee_id"/>
-        <result column="employee_name" property="employee_name"/>
-        <result column="employee_tel" property="employee_tel"/>
-        <result column="employee_sex" property="employee_sex"/>
-
-        <association property="role" javaType="com.car_insurance.entity.Role">
-            <id property="role_id" column="role_id"/>
-            <result property="role_name" column="role_name"/>
-        </association>
-
-        <association property="employeeRole" javaType="com.car_insurance.entity.EmployeeRole">
-            <id property="employee_role_id" column="employee_role_id" />
-            <result property="employee_id" column="employee_id"/>
-            <result property="role_id" column="role_id"/>
-        </association>
-
-    </resultMap>
-
+    
+    
+    
    <!--查询所有员工信息-->
-    <select id="findAllUser" resultMap="BossMap" >
- SELECT
-    et.`employee_id`,et.`employee_name`,et.`employee_sex`,et.`employee_tel`,ro.`role_name`
- FROM
-    employee_table et,`role` ro ,employee_role er
- WHERE
-    et.`employee_id`=er.`employee_id` AND er.`role_id`=ro.`role_id`
+    <select id="findAllUser" resultType="com.car_insurance.entity.EmployeeTableExample">
+
+   SELECT
+            et.`employee_id`,et.`employee_name`,et.`employee_sex`,et.`employee_tel`,ro.`role_name`,li.`limits_name`,li.`tittle`
+        FROM
+            employee_role er,employee_table et ,role ro,limits li,rolelimits rl
+        WHERE er.`employee_id`=et.`employee_id`
+        AND er.`role_id`=ro.`role_id`
+        AND li.`limits_id`=rl.`limits_id`
+        AND rl.`role_id`=ro.`role_id`
     </select>
 
 

@@ -1,17 +1,9 @@
 package com.car_insurance.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ScoutExample extends Scout {
-
-    private DamagedParts damagedParts;
-
-    public DamagedParts getDamagedParts() {
-        return damagedParts;
-    }
-
-    public void setDamagedParts(DamagedParts damagedParts) {
-        this.damagedParts = damagedParts;
-    }
 
 }
