@@ -168,7 +168,7 @@ public class selectAllRecognizeeExampleController {
 
         return "exploration_man";
     }
-    //传值用的给analyze_ktOrder页面
+    //传值用的给analyze_ktOrder页面d
     @RequestMapping("one")
     public  String one(Model model,Integer employee_id , String policyNumber){
         model.addAttribute("employee_id",employee_id);
