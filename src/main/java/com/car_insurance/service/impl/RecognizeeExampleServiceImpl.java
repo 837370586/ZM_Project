@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 /*
-* 胡敏de
+* 胡敏
 * */
 @Service
 public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
