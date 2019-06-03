@@ -26,7 +26,7 @@
 
     <select id="selectAllRecognizeeExample"  resultType="com.car_insurance.entity.RecognizeeExample">
         SELECT
-            recognizee,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
+            recognizee_id,recognizee_idcard,recognizee_name,recognizee_age,recognizee_sex,recognizee_phone,applicant_id,recognizee_address,carid,car_category,ENGINE,vin,insurance_id,policyNumber,car_owner,recognizee
         FROM
             xiangmu.recognizee WHERE carid=#{carid}
     </select>
@@ -70,12 +70,24 @@
               work_order_id=0
 
     </select>
-    <insert id="addScoutExample" parameterType="com.car_insurance.entity.WorkOrderExample">
+    <insert id="addScoutExample" parameterType="com.car_insurance.entity.ScoutExample">
+
+
         INSERT
         INTO
-              scout(scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,damagedParts)
-        VALUES
-               (#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{damagedParts})
 
+
+                 xiangmu.scout(scout_id,scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,glass,tire,carDoor,engineId,bumper,tiremoney,carDoormoney,engineIdmoney,bumpermoney,glassmoney)
+                  VALUES
+                  (#{scout_id},#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{glass},#{tire},#{carDoor},#{engineId},#{bumper},#{tiremoney},#{carDoormoney},#{engineIdmoney},#{bumpermoney},#{glassmoney})
+
+
+              <!--<if test="scoutExample.glass == null  ">-->
+                <!--xiangmu.scout(scout_id,scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,tire,carDoor,engineId,bumper,tiremoney,carDoormoney,engineIdmoney,bumpermoney,)-->
+                  <!--VALUES-->
+                  <!--(#{scout_id},#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{tire},#{carDoor},#{engineId},#{bumper},#{tiremoney},#{carDoormoney},#{engineIdmoney},#{bumpermoney})-->
+
+              <!--</if>-->
     </insert>
+
 </mapper>
