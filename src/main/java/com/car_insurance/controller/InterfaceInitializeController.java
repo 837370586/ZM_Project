@@ -37,4 +37,5 @@ public class InterfaceInitializeController {
         return "exploration_man";
     }
 
+
 }
