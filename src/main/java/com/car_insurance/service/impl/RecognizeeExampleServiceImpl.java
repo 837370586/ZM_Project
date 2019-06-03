@@ -18,7 +18,7 @@ public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
     @Resource
     private RecognizeeExampleMapper  pem;
 
-    //查询所有的方法，主要是通过客户提供的车牌号查投保信息
+    //查询所有的方法，主要是通过客户提供的车牌号查投保信息d
     public List<RecognizeeExample> selectAllRecognizeeExample(String carid) {
 
         return pem.selectAllRecognizeeExample(carid);
