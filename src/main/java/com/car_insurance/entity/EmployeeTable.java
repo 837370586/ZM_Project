@@ -11,7 +11,7 @@ public class EmployeeTable {
 
     private Integer role_id;
 
-    private Integer exploration_status_id;
+
 
     public Integer getEmployee_id() {
         return employee_id;
@@ -53,26 +53,15 @@ public class EmployeeTable {
         this.role_id = role_id;
     }
 
-    public Integer getExploration_status_id() {
-        return exploration_status_id;
-    }
-
-    public void setExploration_status_id(Integer exploration_status_id) {
-        this.exploration_status_id = exploration_status_id;
-    }
-
-    public EmployeeTable(Integer employee_id, String employee_name, String employee_tel, String employee_sex, Integer role_id, Integer exploration_status_id) {
+    public EmployeeTable(Integer employee_id, String employee_name, String employee_tel, String employee_sex, Integer role_id) {
         this.employee_id = employee_id;
         this.employee_name = employee_name;
         this.employee_tel = employee_tel;
         this.employee_sex = employee_sex;
         this.role_id = role_id;
-        this.exploration_status_id = exploration_status_id;
     }
 
-    public  EmployeeTable(){
-
-
+    public EmployeeTable() {
     }
 }
 

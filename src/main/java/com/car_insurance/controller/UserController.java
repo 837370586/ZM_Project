@@ -1,12 +1,7 @@
-package com.car_insurance.concroller;
+package com.car_insurance.controller;
 
 
-import com.car_insurance.service.UserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.annotation.Resource;
 
 @Controller
 public class UserController {

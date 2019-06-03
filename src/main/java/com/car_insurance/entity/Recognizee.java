@@ -3,7 +3,6 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class Recognizee {
-
     private Integer recognizee_id;
 
     private String recognizee_idcard;
@@ -35,6 +34,25 @@ public class Recognizee {
     private String car_owner;
 
     private Date recognizee;
+
+    public Recognizee(Integer recognizee_id, String recognizee_idcard, String recognizee_name, Integer recognizee_age, String recognizee_sex, String recognizee_phone, Integer applicant_id, String recognizee_address, String carid, String car_category, String engine, String vin, Integer insurance_id, String policynumber, String car_owner, Date recognizee) {
+        this.recognizee_id = recognizee_id;
+        this.recognizee_idcard = recognizee_idcard;
+        this.recognizee_name = recognizee_name;
+        this.recognizee_age = recognizee_age;
+        this.recognizee_sex = recognizee_sex;
+        this.recognizee_phone = recognizee_phone;
+        this.applicant_id = applicant_id;
+        this.recognizee_address = recognizee_address;
+        this.carid = carid;
+        this.car_category = car_category;
+        this.engine = engine;
+        this.vin = vin;
+        this.insurance_id = insurance_id;
+        this.policynumber = policynumber;
+        this.car_owner = car_owner;
+        this.recognizee = recognizee;
+    }
 
     public Integer getRecognizee_id() {
         return recognizee_id;
@@ -161,25 +179,6 @@ public class Recognizee {
     }
 
     public void setRecognizee(Date recognizee) {
-        this.recognizee = recognizee;
-    }
-
-    public Recognizee(Integer recognizee_id, String recognizee_idcard, String recognizee_name, Integer recognizee_age, String recognizee_sex, String recognizee_phone, Integer applicant_id, String recognizee_address, String carid, String car_category, String engine, String vin, Integer insurance_id, String policynumber, String car_owner, Date recognizee) {
-        this.recognizee_id = recognizee_id;
-        this.recognizee_idcard = recognizee_idcard;
-        this.recognizee_name = recognizee_name;
-        this.recognizee_age = recognizee_age;
-        this.recognizee_sex = recognizee_sex;
-        this.recognizee_phone = recognizee_phone;
-        this.applicant_id = applicant_id;
-        this.recognizee_address = recognizee_address;
-        this.carid = carid;
-        this.car_category = car_category;
-        this.engine = engine;
-        this.vin = vin;
-        this.insurance_id = insurance_id;
-        this.policynumber = policynumber;
-        this.car_owner = car_owner;
         this.recognizee = recognizee;
     }
 

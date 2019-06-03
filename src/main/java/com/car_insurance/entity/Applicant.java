@@ -3,7 +3,6 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class Applicant {
-
     private Integer applicant_id;
 
     private String applicant_idcard;
@@ -14,16 +13,13 @@ public class Applicant {
 
     private String applicant_phone;
 
-    private Integer registered_phone;
-
-    private String applicant_password;
-
+    private String registered_phone;
+    private Integer applicant_password;
     private String applicant_sex;
 
     private String applicant_address;
 
     private Date applicant_time;
-
 
     public Integer getApplicant_id() {
         return applicant_id;
@@ -65,19 +61,19 @@ public class Applicant {
         this.applicant_phone = applicant_phone;
     }
 
-    public Integer getRegistered_phone() {
+    public String getRegistered_phone() {
         return registered_phone;
     }
 
-    public void setRegistered_phone(Integer registered_phone) {
+    public void setRegistered_phone(String registered_phone) {
         this.registered_phone = registered_phone;
     }
 
-    public String getApplicant_password() {
+    public Integer getApplicant_password() {
         return applicant_password;
     }
 
-    public void setApplicant_password(String applicant_password) {
+    public void setApplicant_password(Integer applicant_password) {
         this.applicant_password = applicant_password;
     }
 
@@ -105,7 +101,7 @@ public class Applicant {
         this.applicant_time = applicant_time;
     }
 
-    public Applicant(Integer applicant_id, String applicant_idcard, String applicant_name, Integer applicant_age, String applicant_phone, Integer registered_phone, String applicant_password, String applicant_sex, String applicant_address, Date applicant_time) {
+    public Applicant(Integer applicant_id, String applicant_idcard, String applicant_name, Integer applicant_age, String applicant_phone, String registered_phone, Integer applicant_password, String applicant_sex, String applicant_address, Date applicant_time) {
         this.applicant_id = applicant_id;
         this.applicant_idcard = applicant_idcard;
         this.applicant_name = applicant_name;

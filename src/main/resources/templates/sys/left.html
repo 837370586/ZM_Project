@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>左侧导航menu</title>
@@ -25,19 +26,20 @@ body{overflow-x:hidden; background:url(../../static/images/main/leftbg.jpg) left
     <span>用户：admin<br>角色：超级管理员</span>
 </div>
     <div style="float: left" id="my_menu" class="sdmenu">
-      <div class="collapsed">
+      <div class="collapsed" src="">
         <span>客户报案中心</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
-        <a href="/warranty" target="mainFrame" onFocus="this.blur()">查询保单信息</a>
-        <a href="/guarantee_slip" target="mainFrame" onFocus="this.blur()">查询保险详细信息</a>
-        <a href="/work_order" target="mainFrame" onFocus="this.blur()">工单生成</a>
+        <a href="/getAllPerson" target="mainFrame" onFocus="this.blur()">查询保单信息</a>
+          <a href="/RecognizeeExampleShow" target="mainFrame" onFocus="this.blur()">车牌保单信息</a>
+        <a href="/InsuranceExampleShow" target="mainFrame" onFocus="this.blur()">查询保险详细信息</a>
+        <a href="/insertOneShow" target="mainFrame" onFocus="this.blur()">工单生成</a>
       </div>
       <div>
         <span>现场勘察</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
-        <a href="/select_work_oder" target="mainFrame" onFocus="this.blur()">查询工单</a>
+        <a href="/WorkOrderExampleShow" target="mainFrame" onFocus="this.blur()">查询工单</a>
         <a href="/exploration_man" target="mainFrame" onFocus="this.blur()">勘探员工信息</a>
-        <a href="/exploration_Add" target="mainFrame" onFocus="this.blur()">勘探信息添加</a>
+        <a href="/addScoutExampleShow.html" target="mainFrame" onFocus="this.blur()">勘探信息添加</a>
       </div>
       <div>
         <span>审核（核保）</span>
