@@ -185,7 +185,7 @@
 							<th align="center" valign="middle" class="borderright">保单号</th>
 							<th align="center" valign="middle" class="borderright">车主</th>
 							<th align="center" valign="middle" class="borderright">保险购买时间</th>
-
+							<th align="center" valign="middle">操作</th>
 						</tr>
 						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'" th:each="u,var : ${pageInfo.list}" >
 									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee_id}"></td>
@@ -206,6 +206,10 @@
 									<td align="center" valign="middle" class="borderright borderbottom" th:text="${u.recognizee}"></td>
 
 
+											<td align="center" valign="middle" class="borderbottom">
+				<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span>
+				<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a>
+			</td>
 		</tr>
 
 		</table>
