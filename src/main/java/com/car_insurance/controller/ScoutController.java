@@ -15,7 +15,7 @@ public class ScoutController {
 @Resource
     private ScoutService sse;
 
-//查询订单信息
+//查询订单信息大
     @RequestMapping("/scoutShow")
     public String showScout(Model model){
         model.addAttribute("scoutList",sse.selectAllScout());
