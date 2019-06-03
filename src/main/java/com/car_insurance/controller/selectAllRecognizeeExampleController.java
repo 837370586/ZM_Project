@@ -127,17 +127,20 @@ public class selectAllRecognizeeExampleController {
 
         String fileName = accidentPhotos.getOriginalFilename();
         String filePath = "D:/accidentphotos/";
+        //uuid 自动生成
         String accidentId = UUID.randomUUID().toString();
         System.out.println(accidentId);
+        //存储图片的路径
         File dest = new File(filePath +accidentId.toString()+"/"+ fileName );
         System.out.println("--------------------------------------------------------------"+scoutExample.getGlass());
-
+//图片上传
         File fileParent = dest.getParentFile();
         if(!fileParent.exists()){
             fileParent.mkdirs();
         }
         try {
             accidentPhotos.transferTo(dest);
+            //上传成功走方法，
             scoutExample.setAccidentPhoto(dest.toString());
             scoutExample.setScout_id(accidentId);
             res.addScoutExample(scoutExample);
@@ -164,5 +167,12 @@ public class selectAllRecognizeeExampleController {
         model.addAttribute("work_order_number",work_order_number);
 
         return "exploration_man";
+    }
+    @RequestMapping("one")
+    public  String one(Model model,Integer employee_id , String policyNumber){
+        model.addAttribute("employee_id",employee_id);
+        model.addAttribute("policyNumber",policyNumber);
+
+        return "analyze_ktOrder";
     }
 }

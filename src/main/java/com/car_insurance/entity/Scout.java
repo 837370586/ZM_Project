@@ -13,7 +13,7 @@ public class Scout {
 
     private String accidentPhoto;
 
-    private Integer recognizee_id;
+    private String policyNumber;
 
     private String loss_situation;
 
@@ -42,13 +42,14 @@ public class Scout {
 
     private Double glassmoney;
 
-    public Scout(String scout_id, Integer scout_num, String scout_time, Integer accident_type_id, String accidentPhoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, Integer state_id, String glass, String tire, String carDoor, String engineId, String bumper, Double tiremoney, Double carDoormoney, Double engineIdmoney, Double bumpermoney, Double glassmoney) {
+
+    public Scout(String scout_id, Integer scout_num, String scout_time, Integer accident_type_id, String accidentPhoto, String policyNumber, String loss_situation, String responsibility_judgment, Integer state_id, String glass, String tire, String carDoor, String engineId, String bumper, Double tiremoney, Double carDoormoney, Double engineIdmoney, Double bumpermoney, Double glassmoney) {
         this.scout_id = scout_id;
         this.scout_num = scout_num;
         this.scout_time = scout_time;
         this.accident_type_id = accident_type_id;
         this.accidentPhoto = accidentPhoto;
-        this.recognizee_id = recognizee_id;
+        this.policyNumber = policyNumber;
         this.loss_situation = loss_situation;
         this.responsibility_judgment = responsibility_judgment;
         this.state_id = state_id;
@@ -107,12 +108,12 @@ public class Scout {
         this.accidentPhoto = accidentPhoto;
     }
 
-    public Integer getRecognizee_id() {
-        return recognizee_id;
+    public String getPolicyNumber() {
+        return policyNumber;
     }
 
-    public void setRecognizee_id(Integer recognizee_id) {
-        this.recognizee_id = recognizee_id;
+    public void setPolicyNumber(String policyNumber) {
+        this.policyNumber = policyNumber;
     }
 
     public String getLoss_situation() {
@@ -179,43 +180,43 @@ public class Scout {
         this.bumper = bumper;
     }
 
-    public double getTiremoney() {
+    public Double getTiremoney() {
         return tiremoney;
     }
 
-    public void setTiremoney(double tiremoney) {
+    public void setTiremoney(Double tiremoney) {
         this.tiremoney = tiremoney;
     }
 
-    public double getCarDoormoney() {
+    public Double getCarDoormoney() {
         return carDoormoney;
     }
 
-    public void setCarDoormoney(double carDoormoney) {
+    public void setCarDoormoney(Double carDoormoney) {
         this.carDoormoney = carDoormoney;
     }
 
-    public double getEngineIdmoney() {
+    public Double getEngineIdmoney() {
         return engineIdmoney;
     }
 
-    public void setEngineIdmoney(double engineIdmoney) {
+    public void setEngineIdmoney(Double engineIdmoney) {
         this.engineIdmoney = engineIdmoney;
     }
 
-    public double getBumpermoney() {
+    public Double getBumpermoney() {
         return bumpermoney;
     }
 
-    public void setBumpermoney(double bumpermoney) {
+    public void setBumpermoney(Double bumpermoney) {
         this.bumpermoney = bumpermoney;
     }
 
-    public double getGlassmoney() {
+    public Double getGlassmoney() {
         return glassmoney;
     }
 
-    public void setGlassmoney(double glassmoney) {
+    public void setGlassmoney(Double glassmoney) {
         this.glassmoney = glassmoney;
     }
 }
