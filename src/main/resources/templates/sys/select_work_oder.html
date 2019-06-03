@@ -1,6 +1,9 @@
 <html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"/>
+<html xmlns:th="http://www.thymeleaf.org"/>
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>主要内容区main</title>
@@ -80,7 +83,10 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
           <td align="center" valign="middle" class="borderright borderbottom"th:text="${u.accident_spot}"></td>
 
           <td align="center" valign="middle" class="borderright borderbottom" >
-            <a th:href="@{ginseng(work_order_number=${u.work_order_number},policyNumber=${u.policyNumber})}"> 处理</a>
+
+
+
+            <a   th:href="@{ginseng(work_order_number=${u.work_order_number},policyNumber=${u.policyNumber})}"> 处理</a>
 
           </td>
         </form>
@@ -100,5 +106,5 @@ td.fenye{ padding:10px 0 0 0; text-align:right;}
     </td>
   </tr>
 </table>
-</body>
+
 </html>

@@ -70,6 +70,7 @@
               work_order_id=0
 
     </select>
+    <!--添加勘察信息的方法-->
     <insert id="addScoutExample" parameterType="com.car_insurance.entity.ScoutExample">
 
 
@@ -82,12 +83,7 @@
                   (#{scout_id},#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{glass},#{tire},#{carDoor},#{engineId},#{bumper},#{tiremoney},#{carDoormoney},#{engineIdmoney},#{bumpermoney},#{glassmoney})
 
 
-              <!--<if test="scoutExample.glass == null  ">-->
-                <!--xiangmu.scout(scout_id,scout_num,scout_time,accident_type_id,accidentPhoto,loss_situation,responsibility_judgment,tire,carDoor,engineId,bumper,tiremoney,carDoormoney,engineIdmoney,bumpermoney,)-->
-                  <!--VALUES-->
-                  <!--(#{scout_id},#{scout_num},#{scout_time},#{accident_type_id},#{accidentPhoto},#{loss_situation},#{responsibility_judgment},#{tire},#{carDoor},#{engineId},#{bumper},#{tiremoney},#{carDoormoney},#{engineIdmoney},#{bumpermoney})-->
 
-              <!--</if>-->
     </insert>
 
 </mapper>

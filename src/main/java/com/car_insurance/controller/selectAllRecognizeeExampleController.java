@@ -33,7 +33,7 @@ public class selectAllRecognizeeExampleController {
         System.out.println("这是胡敏的controller层根据车牌号查的方法" + carid);
         model.addAttribute("showList", res.selectAllRecognizeeExample(carid));
         System.out.println("model下面");
-        return "sys/plate";
+        return "plate";
     }
     //查询被保险人的方法  因为加分页这个方法就不用了
     /*@RequestMapping("/RecognizeeShow")
@@ -157,7 +157,7 @@ public class selectAllRecognizeeExampleController {
         model.addAttribute("imageState", imageState);
         return "exploration_Add";
     }
-
+//传值用的给exploration_man页面
     @RequestMapping("/ginseng")
     public String ginseng(Model model ,String policyNumber,Integer work_order_number ) {
         System.out.println("这是胡敏的controller层传参的方法" );
@@ -168,11 +168,13 @@ public class selectAllRecognizeeExampleController {
 
         return "exploration_man";
     }
+    //传值用的给analyze_ktOrder页面
     @RequestMapping("one")
     public  String one(Model model,Integer employee_id , String policyNumber){
         model.addAttribute("employee_id",employee_id);
         model.addAttribute("policyNumber",policyNumber);
-
+        System.out.println(employee_id);
+        System.out.println(policyNumber);
         return "analyze_ktOrder";
     }
 }
