@@ -51,4 +51,5 @@ public class RecognizeeExampleServiceImpl implements RecognizeeExampleService {
         pem.addScoutExample(scoutExample);
     }
 
+
 }

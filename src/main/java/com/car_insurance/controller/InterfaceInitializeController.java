@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class InterfaceInitializeController {
 
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
+    }
     @RequestMapping("/top")
     public String top(){
         return "top";
@@ -36,5 +40,6 @@ public class InterfaceInitializeController {
     public String exploration_man(){
         return "exploration_man";
     }
+
 
 }
