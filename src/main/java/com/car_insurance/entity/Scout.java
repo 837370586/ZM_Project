@@ -3,7 +3,7 @@ package com.car_insurance.entity;
 import java.util.Date;
 
 public class Scout {
-    private Integer scout_id;
+    private String  scout_id;
 
     private Integer scout_num;
 
@@ -19,17 +19,33 @@ public class Scout {
 
     private String responsibility_judgment;
 
-    private String accidentgoods_name;
-
-    private Double accidentgoods_price;
-
     private Integer state_id;
 
-    public Integer getScout_id() {
+    private  String glass;
+
+    private String tire;
+
+    private  String carDoor;
+
+    private String engineId;
+
+    private String bumper;
+
+    private double tiremoney;
+
+    private double carDoormoney;
+
+    private double engineIdmoney;
+
+    private double bumpermoney;
+
+    private double glassmoney;
+
+    public String getScout_id() {
         return scout_id;
     }
 
-    public void setScout_id(Integer scout_id) {
+    public void setScout_id(String scout_id) {
         this.scout_id = scout_id;
     }
 
@@ -89,22 +105,6 @@ public class Scout {
         this.responsibility_judgment = responsibility_judgment;
     }
 
-    public String getAccidentgoods_name() {
-        return accidentgoods_name;
-    }
-
-    public void setAccidentgoods_name(String accidentgoods_name) {
-        this.accidentgoods_name = accidentgoods_name;
-    }
-
-    public Double getAccidentgoods_price() {
-        return accidentgoods_price;
-    }
-
-    public void setAccidentgoods_price(Double accidentgoods_price) {
-        this.accidentgoods_price = accidentgoods_price;
-    }
-
     public Integer getState_id() {
         return state_id;
     }
@@ -113,10 +113,87 @@ public class Scout {
         this.state_id = state_id;
     }
 
-    public Scout() {
+    public String getGlass() {
+        return glass;
     }
 
-    public Scout(Integer scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentphoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, String accidentgoods_name, Double accidentgoods_price, Integer state_id) {
+    public void setGlass(String glass) {
+        this.glass = glass;
+    }
+
+    public String getTire() {
+        return tire;
+    }
+
+    public void setTire(String tire) {
+        this.tire = tire;
+    }
+
+    public String getCarDoor() {
+        return carDoor;
+    }
+
+    public void setCarDoor(String carDoor) {
+        this.carDoor = carDoor;
+    }
+
+    public String getEngineId() {
+        return engineId;
+    }
+
+    public void setEngineId(String engineId) {
+        this.engineId = engineId;
+    }
+
+    public String getBumper() {
+        return bumper;
+    }
+
+    public void setBumper(String bumper) {
+        this.bumper = bumper;
+    }
+
+    public double getTiremoney() {
+        return tiremoney;
+    }
+
+    public void setTiremoney(double tiremoney) {
+        this.tiremoney = tiremoney;
+    }
+
+    public double getCarDoormoney() {
+        return carDoormoney;
+    }
+
+    public void setCarDoormoney(double carDoormoney) {
+        this.carDoormoney = carDoormoney;
+    }
+
+    public double getEngineIdmoney() {
+        return engineIdmoney;
+    }
+
+    public void setEngineIdmoney(double engineIdmoney) {
+        this.engineIdmoney = engineIdmoney;
+    }
+
+    public double getBumpermoney() {
+        return bumpermoney;
+    }
+
+    public void setBumpermoney(double bumpermoney) {
+        this.bumpermoney = bumpermoney;
+    }
+
+    public double getGlassmoney() {
+        return glassmoney;
+    }
+
+    public void setGlassmoney(double glassmoney) {
+        this.glassmoney = glassmoney;
+    }
+
+    public Scout(String scout_id, Integer scout_num, Date scout_time, Integer accident_type_id, String accidentphoto, Integer recognizee_id, String loss_situation, String responsibility_judgment, Integer state_id, String glass, String tire, String carDoor, String engineId, String bumper, double tiremoney, double carDoormoney, double engineIdmoney, double bumpermoney, double glassmoney) {
         this.scout_id = scout_id;
         this.scout_num = scout_num;
         this.scout_time = scout_time;
@@ -125,8 +202,21 @@ public class Scout {
         this.recognizee_id = recognizee_id;
         this.loss_situation = loss_situation;
         this.responsibility_judgment = responsibility_judgment;
-        this.accidentgoods_name = accidentgoods_name;
-        this.accidentgoods_price = accidentgoods_price;
         this.state_id = state_id;
+        this.glass = glass;
+        this.tire = tire;
+        this.carDoor = carDoor;
+        this.engineId = engineId;
+        this.bumper = bumper;
+        this.tiremoney = tiremoney;
+        this.carDoormoney = carDoormoney;
+        this.engineIdmoney = engineIdmoney;
+        this.bumpermoney = bumpermoney;
+        this.glassmoney = glassmoney;
     }
+    public Scout(){
+
+
+    }
+
 }
