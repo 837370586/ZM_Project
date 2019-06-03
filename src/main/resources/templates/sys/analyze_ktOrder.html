@@ -1,11 +1,12 @@
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"/>
+<html xmlns:th="http://www.thymeleaf.org"/>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>主要内容区main</title>
-		<link th:href="@{css/css.css}" type="text/css" rel="stylesheet" />
-		<link th:href="@{css/main.css}" type="text/css" rel="stylesheet" />
-		<link rel="shortcut icon" th:href="@{images/main/favicon.ico}" />
+		<link href="../../static/css/css.css" type="text/css" rel="stylesheet" />
+		<link href="../../static/css/main.css" type="text/css" rel="stylesheet" />
+		<link rel="shortcut icon" href="../../static/images/main/favicon.ico" />
 		<style>
 			body {
 				overflow-x: hidden;
@@ -48,7 +49,7 @@
 				height: 24px;
 				line-height: 24px;
 				width: 55px;
-				background: url(../../static/images/main/list_input.jpg) no-repeat left top;
+				background: url(static/images/main/list_input.jpg) no-repeat left top;
 				border: none;
 				cursor: pointer;
 				font-family: "Microsoft YaHei", "Tahoma", "Arial", '宋体';
@@ -59,7 +60,7 @@
 			}
 			
 			#search a.add {
-				background: url(../../static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
+				background: url(static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
 				padding: 0 10px 0 26px;
 				height: 40px;
 				line-height: 40px;
@@ -82,7 +83,7 @@
 			
 			#main-tab th {
 				font-size: 12px;
-				background: url(../../static/images/main/list_bg.jpg) repeat-x;
+				background: url(static/images/main/list_bg.jpg) repeat-x;
 				height: 32px;
 				line-height: 32px;
 			}
@@ -131,23 +132,24 @@
 				background: #f9f9f9
 			}
 		</style>
+
 	</head>
 
 	<body>
 		<!--main_top-->
 		<table width="99%" border="0" cellspacing="0" cellpadding="0" id="searchmain">
 			<tr>
-				<td width="99%" align="left" valign="top">您的位置：勘探人员信息</td>
+				<td width="99%" align="left" valign="top">您的位置：订单审核</td>
 			</tr>
 			<tr>
 				<td align="left" valign="top">
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
 						<tr>
 							<td width="20%" align="left" valign="middle">
-								<form method="post" action="">
+								<form method="post" action="selectOne">
 									<span>查询指定审核订单（ID）：</span>
-									<input type="text" name="" value="" class="text-word">
-									<input name="" type="button" value="查询" class="text-but">
+									<input type="text" name="scout_num" class="text-word">
+									<input name="" type="submit" value="查询" class="text-but">
 								</form>
 							</td>
 						</tr>
@@ -159,39 +161,41 @@
 
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="main-tab">
 						<tr>
+							<th align="center" valign="middle" class="borderright">订单编号</th>
 							<th align="center" valign="middle" class="borderright">勘察员工号</th>
 							<th align="center" valign="middle" class="borderright">勘察时间</th>
 							<th align="center" valign="middle" class="borderright">事故类型编号</th>
 							<th align="center" valign="middle" class="borderright">事故照片</th>
-							<th align="center" valign="middle" class="borderright">被保人ID</th>
+							<th align="center" valign="middle" class="borderright">保单号</th>
 							<th align="center" valign="middle" class="borderright">损失状况</th>
 							<th align="center" valign="middle" class="borderright">责任归属</th>
 							<th align="center" valign="middle">操作</th>
 						</tr>
-						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom">111</td>
-							<td align="center" valign="middle" class="borderright borderbottom">2019-05-23 14:50:52</td>
-							<td align="center" valign="middle" class="borderright borderbottom"></td>
-							<td align="center" valign="middle" class="borderright borderbottom"></td>
-							<td align="center" valign="middle" class="borderright borderbottom"></td>
-							<td align="center" valign="middle" class="borderright borderbottom"></td>
-							<td align="center" valign="middle" class="borderright borderbottom"></td>
+						<tr th:each="pageInfo:${pageInfo.list}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.scout_id}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${employee_id}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.scout_time}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.accident_type_id}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.accidentphoto}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${polocyNumber}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.loss_situation}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.responsibility_judgment}"></td>
 							<td align="center" valign="middle" class="borderbottom">
-								<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">驳回</a><span class="gray">&nbsp;|&nbsp;</span>
-								<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">通过</a>
+								<a th:href="@{boHui1(scout_id=${pageInfo.scout_id},employee_id=${employee_id},scout_time=${pageInfo.scout_time},accident_type_id=${pageInfo.accident_type_id},
+								accidentphoto=${pageInfo.accidentphoto},polocyNumber=${polocyNumber},loss_situation=${pageInfo.loss_situation},responsibility_judgment=${pageInfo.responsibility_judgment})}" target="mainFrame" onFocus="this.blur()" class="add">驳回</a><span class="gray">|</span>
+								<a th:href="@{interviceShow(scout_id=${pageInfo.scout_id})}" target="mainFrame" onFocus="this.blur()" >通过</a>
 							</td>
 						</tr>
-
 					</table>
-					<tr>
-						<td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a>
+					<tr >
+						<td align="left" valign="top" class="fenye" >&nbsp;&nbsp;
+							<p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+							<a th:href="@{/scoutShow}" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
+							<a th:href="@{/scoutShow(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
+							<a th:href="@{/scoutShow(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
+							<a th:href="@{/scoutShow(pageNum=${pageInfo.pages})}" target="mainFrame" onFocus="this.blur()">尾页</a>
 						</td>
 					</tr>
-		</table>
 	</body>
 
 </html>

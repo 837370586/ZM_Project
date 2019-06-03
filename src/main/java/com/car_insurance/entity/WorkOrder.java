@@ -5,9 +5,9 @@ public class WorkOrder {
 
     private Integer employee_id;
 
-    private Integer work_order_number;
+    private Integer workOrder_number;
 
-    private String policyNumber;
+    private Integer recognizee_id;
 
     private String accident_spot;
 
@@ -27,20 +27,20 @@ public class WorkOrder {
         this.employee_id = employee_id;
     }
 
-    public Integer getWork_order_number() {
-        return work_order_number;
+    public Integer getWorkOrder_number() {
+        return workOrder_number;
     }
 
-    public void setWork_order_number(Integer work_order_number) {
-        this.work_order_number = work_order_number;
+    public void setWorkOrder_number(Integer workOrder_number) {
+        this.workOrder_number = workOrder_number;
     }
 
-    public String getPolicyNumber() {
-        return policyNumber;
+    public Integer getRecognizee_id() {
+        return recognizee_id;
     }
 
-    public void setPolicyNumber(String policyNumber) {
-        this.policyNumber = policyNumber;
+    public void setRecognizee_id(Integer recognizee_id) {
+        this.recognizee_id = recognizee_id;
     }
 
     public String getAccident_spot() {
@@ -51,11 +51,11 @@ public class WorkOrder {
         this.accident_spot = accident_spot;
     }
 
-    public WorkOrder(Integer work_order_id, Integer employee_id, Integer work_order_number, String policyNumber, String accident_spot) {
+    public WorkOrder(Integer work_order_id, Integer employee_id, Integer workOrder_number, Integer recognizee_id, String accident_spot) {
         this.work_order_id = work_order_id;
         this.employee_id = employee_id;
-        this.work_order_number = work_order_number;
-        this.policyNumber = policyNumber;
+        this.workOrder_number = workOrder_number;
+        this.recognizee_id = recognizee_id;
         this.accident_spot = accident_spot;
     }
 
