@@ -1,11 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.car_insurance.mapper.UsersMapper">
+<mapper namespace="com.car_insurance.mapper.ScoutMapper">
+    <!--查询所有订单表-->
     <select id="selectAllScout" resultType="com.car_insurance.entity.ScoutExample">
+        select
+               scout_id,scout_time,accident_type_id,accidentphoto,loss_situation,Responsibility_judgment
+        from
+               scout
+    </select>
 
-        select * from scout
+    <!--根据订单号查询指定订单表-->
+    <select id="selectOne" resultType="com.car_insurance.entity.ScoutExample" parameterType="Integer">
+      select
+            scout_id,scout_num,scout_time,accident_type_id,accidentphoto,recognizee_id,loss_situation,Responsibility_judgment
+      from
+            scout
+      where
+            scout_num = #{scout_num}
+    </select>
+
+    <!--查接口表-->
+    <select id="selectAllIntervice" resultType="com.car_insurance.entity.InterviceExample">
+        select
+                 num,goods_name,goods_price
+        from
+                 intervice
+    </select>
+
+    <!--直接查损坏零件表-->
+    <select id="selectOneParts" resultType="com.car_insurance.entity.ScoutExample" parameterType="String">
+        select
+              glass,tire,carDoor,engineId,bumper,tiremoney,carDoormoney,engineIdmoney,bumpermoney,glassmoney
+        from
+              scout
+        where
+              scout_id = #{id}
+
+    </select>
+
+    <!--2表联查-->
+    <resultMap id="CheckPeople" type="com.car_insurance.entity.EmployeeTableExample">
+
+        <result property="employee_id"  javaType="Integer" column="employee_id"/>
+        <result property="employee_name" javaType="String" column="employee_name"/>
+        <result property="employee_tel" javaType="String" column="employee_tel"/>
+        <result property="employee_sex" javaType="String" column="employee_sex"/>
+        <result property="roleId" javaType="Integer" column="roleId"/>
+        <result property="exploration_status_id" javaType="Integer" column="exploration_status_id"/>
+
+
+    <association property="role" javaType="com.car_insurance.entity.Role">
+        <result property="role_id"  javaType="Integer" column="role_id"/>
+        <result property="role_name" javaType="String" column="role_name"/>
+    </association>
+    </resultMap>
+
+    <select id="selectAllCheckPeople" resultMap="CheckPeople" >
+   select
+          e.employee_id,e.employee_name,e.employee_tel,e.employee_sex,e.exploration_status_id
+    from
+         employee_table e inner join role r on e.`role_id`=r.`role_id` where e.role_id = 1
+    </select>
+
+
+
+    <select id="selectOneCheck" resultType="com.car_insurance.entity.EmployeeTableExample">
+      select
+             e.employee_id,e.employee_name,e.employee_tel,e.employee_sex
+      from
+            employee_table e inner join role r on e.`role_id`=r.`role_id` where e.employee_id = #{employee_id}
 
 
     </select>
 
+
+    <delete id="deleatOne" >
+        delete
+        from
+                employee_table
+        where
+                employee_id = #{employee_id}
+
+    </delete>
+
+    <update id="updateOne">
+
+        update
+              employee_table
+        set
+              employee_name = #{1}, employee_tel = #{2}
+        where
+              employee_id = #{0}
+
+    </update>
+
+    <!--往最后的表里添加信息-->
+     <insert id="insertInto" parameterType="com.car_insurance.entity.FinallyscoutExample">
+
+         insert into
+                    finallyScout(`scout_id`,`employee_id`,`polocyNumber`,`scout_time`,`accident_type_id`,`accidentphoto`,`loss_situation`,`responsibility_judgment`)
+          values
+                    (#{2},#{0},#{1},#{3},#{4},#{5}
+                    ,#{6},#{7})
+
+     </insert>
+
+     <update id="inserInto2" parameterType="String">
+         UPDATE
+                finallyScout
+         SET
+                reson=#{0}
+
+        WHERE scout_id=#{1}
+
+     </update>
+
+    <!--查最后的表-->
+    <select id="selectFinally" resultType="com.car_insurance.entity.FinallyscoutExample">
+          SELECT
+                `scout_id`,`employee_id`,`polocyNumber`,`scout_time`,`accident_type_id`,`accidentphoto`,`loss_situation`,`responsibility_judgment`,`reson`
+          FROM
+                finallyScout
+
+    </select>
+
+
+    <!--点击勘探员操作改workword表里的workwordiId,0改1-->
+    <update id="updateWodeWordId" parameterType="Integer">
+        UPDATE
+                workOrder
+         SET
+                work_order_id = 1
+
+        WHERE employee_id = #{0}
+
+    </update>
 </mapper>

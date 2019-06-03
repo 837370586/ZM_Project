@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -48,7 +49,7 @@
 				height: 24px;
 				line-height: 24px;
 				width: 55px;
-				background: url(../../static/images/main/list_input.jpg) no-repeat left top;
+				background: url(static/images/main/list_input.jpg) no-repeat left top;
 				border: none;
 				cursor: pointer;
 				font-family: "Microsoft YaHei", "Tahoma", "Arial", '宋体';
@@ -59,7 +60,7 @@
 			}
 			
 			#search a.add {
-				background: url(../../static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
+				background: url(static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
 				padding: 0 10px 0 26px;
 				height: 40px;
 				line-height: 40px;
@@ -82,7 +83,7 @@
 			
 			#main-tab th {
 				font-size: 12px;
-				background: url(../../static/images/main/list_bg.jpg) repeat-x;
+				background: url(static/images/main/list_bg.jpg) repeat-x;
 				height: 32px;
 				line-height: 32px;
 			}
@@ -144,17 +145,10 @@
 					<table width="100%" border="0" cellspacing="0" cellpadding="0" id="search">
 						<tr>
 							<td width="20%" align="left" valign="middle">
-								<form method="post" action="">
+								<form method="post" action="selectOneCheck">
 									<span>查询勘探人员（ID）：</span>
-									<input type="text" name="" value="" class="text-word">
-									<input name="" type="button" value="查询" class="text-but">
-								</form>
-							</td>
-							<td width="8%" align="right" valign="middle">
-								<form method="post" action="">
-									<span>指派勘探人员（ID）：</span>
-									<input type="text" name="" value="" class="text-word">
-									<input name="" type="button" value="指派" class="text-but">
+									<input type="text" name="employee_id" value="" class="text-word">
+									<input name="" type="submit" value="查询" class="text-but">
 								</form>
 							</td>
 						</tr>
@@ -170,28 +164,36 @@
 							<th align="center" valign="middle" class="borderright">员工姓名</th>
 							<th align="center" valign="middle" class="borderright">员工电话</th>
 							<th align="center" valign="middle" class="borderright">员工性别</th>
+							<th align="center" valign="middle" class="borderright">勘察状态</th>
+							<th align="center" valign="middle" class="borderright">工单号</th>
+							<th align="center" valign="middle" class="borderright">保单号</th>
 							<th align="center" valign="middle">操作</th>
 						</tr>
-						<tr onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
-							<td align="center" valign="middle" class="borderright borderbottom">1</td>
-							<td align="center" valign="middle" class="borderright borderbottom">木之本樱</td>
-							<td align="center" valign="middle" class="borderright borderbottom">13584621573</td>
-							<td align="center" valign="middle" class="borderright borderbottom">女</td>
+						<tr th:each="pageInfo:${pageInfo.list}" onMouseOut="this.style.backgroundColor='#ffffff'" onMouseOver="this.style.backgroundColor='#edf5ff'">
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.employee_id}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.employee_name}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.employee_tel}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${pageInfo.employee_sex}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:if="${pageInfo.exploration_status_id}==1" ><span>待勘察</span></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:if="${pageInfo.exploration_status_id}==2" ><span>勘察中</span></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${workword_num}"></td>
+							<td align="center" valign="middle" class="borderright borderbottom" th:text="${polocyNumber}"></td>
 							<td align="center" valign="middle" class="borderbottom">
-								<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span>
-								<a href="add.html" target="mainFrame" onFocus="this.blur()" class="add">删除</a>
+								<a th:href="@{tiaozhuan(employee_id=${pageInfo.employee_id})}" target="mainFrame" onFocus="this.blur()" class="add">编辑</a><span class="gray">&nbsp;|&nbsp;</span>
+								<a th:href="@{deletOne(employee_id=${pageInfo.employee_id})}" target="mainFrame" onFocus="this.blur()" class="add">删除</a><span class="gray">&nbsp;|&nbsp;</span>
+								<a th:href="@{tiaozhuan2(employee_id=${pageInfo.employee_id},polocyNumber=${polocyNumber})}" target="mainFrame" onFocus="this.blur()" class="add" th:if="${pageInfo.exploration_status_id}==1"><span>操作</span></a>
 							</td>
 						</tr>
-
 					</table>
-					<tr>
-						<td align="left" valign="top" class="fenye">11 条数据 1/1 页&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
-							<a href="#" target="mainFrame" onFocus="this.blur()">尾页</a>
-						</td>
-					</tr>
+			<tr >
+				<td align="left" valign="top" class="fenye" >&nbsp;&nbsp;
+					<p>当前 <span th:text="${pageInfo.pageNum}"></span> 页,总 <span th:text="${pageInfo.pages}"></span> 页,共 <span th:text="${pageInfo.total}"></span> 条记录</p>
+					<a th:href="@{/allCheckPeopleShow}" target="mainFrame" onFocus="this.blur()">首页</a>&nbsp;&nbsp;
+					<a th:href="@{/allCheckPeopleShow(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}" target="mainFrame" onFocus="this.blur()">上一页</a>&nbsp;&nbsp;
+					<a th:href="@{/allCheckPeopleShow(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" target="mainFrame" onFocus="this.blur()">下一页</a>&nbsp;&nbsp;
+					<a th:href="@{/allCheckPeopleShow(pageNum=${pageInfo.pages})}" target="mainFrame" onFocus="this.blur()">尾页</a>
+				</td>
+			</tr>
 		</table>
 	</body>
 

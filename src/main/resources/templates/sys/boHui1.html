@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>编辑驳回原因</title>
+    <!--
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/form-elements.css">
+
+<link rel="stylesheet" href="assets/css/style.css">-->
+
+    <link th:href="@{css/css.css}" type="text/css" rel="stylesheet" />
+    <link th:href="@{css/main.css}" type="text/css" rel="stylesheet" />
+    <link th:href="@{css/form.css}" type="text/css" rel="stylesheet" />
+    <link rel="shortcut icon" th:href="@{images/main/favicon.ico}" />
+    <style>
+        body {
+            overflow-x: hidden;
+            background: #f2f0f5;
+            padding: 15px 0px 10px 5px;
+        }
+
+        #submit {
+            height: 30px;
+            width: 70px;
+            margin-top: 30px;
+        }
+
+        #searchmain {
+            font-size: 12px;
+        }
+
+        #search {
+            font-size: 12px;
+            background: #548fc9;
+            margin: 10px 10px 0 0;
+            display: inline;
+            width: 100%;
+            color: #FFF;
+            float: left
+        }
+
+        #search form span {
+            height: 40px;
+            line-height: 40px;
+            padding: 0 0px 0 10px;
+            float: left;
+        }
+
+        #search form input.text-word {
+            height: 24px;
+            line-height: 24px;
+            width: 180px;
+            margin: 8px 0 6px 0;
+            padding: 0 0px 0 10px;
+            float: left;
+            border: 1px solid #FFF;
+        }
+
+        #search form input.text-but {
+            height: 24px;
+            line-height: 24px;
+            width: 55px;
+            background: url(static/images/main/list_input.jpg) no-repeat left top;
+            border: none;
+            cursor: pointer;
+            font-family: "Microsoft YaHei", "Tahoma", "Arial", '宋体';
+            color: #666;
+            float: left;
+            margin: 8px 0 0 6px;
+            display: inline;
+        }
+
+        #search a.add {
+            background: url(static/images/main/add.jpg) no-repeat -3px 7px #548fc9;
+            padding: 0 10px 0 26px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFF;
+            float: right
+        }
+
+        #search a:hover.add {
+            text-decoration: underline;
+            color: #d2e9ff;
+        }
+
+        #main-tab {
+            border: 1px solid #eaeaea;
+            background: #FFF;
+            font-size: 12px;
+        }
+
+        #main-tab th {
+            font-size: 12px;
+            background: url(static/images/main/list_bg.jpg) repeat-x;
+            height: 32px;
+            line-height: 32px;
+        }
+
+        #main-tab td {
+            font-size: 12px;
+            line-height: 40px;
+        }
+
+        #main-tab td a {
+            font-size: 12px;
+            color: #548fc9;
+        }
+
+        #main-tab td a:hover {
+            color: #565656;
+            text-decoration: underline;
+        }
+
+        .bordertop {
+            border-top: 1px solid #ebebeb
+        }
+
+        .borderright {
+            border-right: 1px solid #ebebeb
+        }
+
+        .borderbottom {
+            border-bottom: 1px solid #ebebeb
+        }
+
+        .borderleft {
+            border-left: 1px solid #ebebeb
+        }
+
+        .gray {
+            color: #dbdbdb;
+        }
+
+        td.fenye {
+            padding: 10px 0 0 0;
+            text-align: right;
+        }
+
+        .bggray {
+            background: #f9f9f9
+        }
+    </style>
+</head>
+
+<body>
+<!--main_top-->
+<form th:action="@{addReson(scout_id=${scout_id})}" method="post" enctype="">
+    <table width="98%" height="90%" border="0" align="center" cellpadding="0" cellspacing="1">
+        <tr>
+            <td width="99%" align="left" valign="top">您的位置：编辑驳回原因</td>
+        </tr>
+        <tr>
+            <td width="99%" align="left" valign="top">被驳回订单号为：</td>
+        </tr>
+        <tr>
+            <td width="99%" align="left" valign="top" th:text="${scout_id}"></td>
+        </tr>
+        <tr>
+            <td colspan="4" class="STYLE1">
+                <table width="70%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin: auto;">
+                    <tr>
+                        <td width="142" height="35" class="STYLE1" nowrap="nowrap">
+                            <div align="left">请输入驳回原因</div>
+                        </td>
+                        <td height="100" colspan="3" class="STYLE1">
+                            <div align="left">
+                                <input type="text" name="reson" style="width:300px; height:30px; font-size:12px; border:solid 1px #ccc; " />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="40" class="STYLE1">&nbsp;</td>
+                        <td height="35" colspan="3" class="STYLE1"><input type="submit"  value="提交" /></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+
+</html>
