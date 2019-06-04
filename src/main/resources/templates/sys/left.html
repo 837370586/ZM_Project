@@ -4,15 +4,42 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>左侧导航menu</title>
 <link th:href="@{css/css.css}" type="text/css" rel="stylesheet" />
-<script type="text/javascript" th:src="@{js/sdmenu.js}"></script>
-<script type="text/javascript">
+    <script type="text/javascript" th:src="@{js/sdmenu.js}"></script>
+    <script src="webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
 	// <![CDATA[
 	var myMenu;
 	window.onload = function() {
 		myMenu = new SDMenu("my_menu");
 		myMenu.init();
+		  judgeAuthority();
 	};
-	// ]]>
+
+	       function judgeAuthority(){
+            $.ajax({
+                type: "post",
+                url: "/qqq",
+                dataType:"json",
+                success:function(data){
+                       if(data[0]=="boss"){
+                           $("#boss").css("display","block");
+                            $("#service").css("display","block");
+                             $("#audit").css("display","block");
+                              $("#reconnaissance").css("display","block");
+                       }
+                       if(data[0]=="service"){
+                             $("#service").css("display","block");
+                       }
+                        if(data[0]=="audit"){
+                             $("#audit").css("display","block");
+                       }
+                        if(data[0]=="reconnaissance"){
+                             $("#reconnaissance").css("display","block");
+                       }
+
+                }
+            })
+        };
 </script>
 <style type=text/css>
 html{ SCROLLBAR-FACE-COLOR: #538ec6; SCROLLBAR-HIGHLIGHT-COLOR: #dce5f0; SCROLLBAR-SHADOW-COLOR: #2c6daa; SCROLLBAR-3DLIGHT-COLOR: #dce5f0; SCROLLBAR-ARROW-COLOR: #2c6daa;  SCROLLBAR-TRACK-COLOR: #dce5f0;  SCROLLBAR-DARKSHADOW-COLOR: #dce5f0; overflow-x:hidden;}
@@ -21,31 +48,32 @@ body{overflow-x:hidden; background:url(../../static/images/main/leftbg.jpg) left
 </head>
 <body onselectstart="return false;" ondragstart="return false;" oncontextmenu="return false;">
 <div id="left-top">
-	<div><img th:src="@{images/main/member.gif}" width="44" height="44" /></div>
-    <span>用户：admin<br>角色：超级管理员</span>
+    <div><img th:src="@{images/main/member.gif}" width="44" height="44" /></div>
+    <span th:text="${session.qwe}" style="font-size: 15px;height: 28px;" ></span>
+    <span th:text="${session.asd}" style="font-size: 16px;height: 28px;" ></span>
 </div>
-    <div style="float: left" id="my_menu" class="sdmenu">
-      <div class="collapsed">
+    <div style="float: left" id="my_menu" class="sdmenu" >
+      <div class="collapsed" id="service" style="display: none">
         <span>客户报案中心</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
         <a href="/warranty" target="mainFrame" onFocus="this.blur()">查询保单信息</a>
         <a href="/guarantee_slip" target="mainFrame" onFocus="this.blur()">查询保险详细信息</a>
         <a href="/work_order" target="mainFrame" onFocus="this.blur()">工单生成</a>
       </div>
-      <div>
+      <div id="reconnaissance" style="display: none">
         <span>现场勘察</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
         <a href="/select_work_oder" target="mainFrame" onFocus="this.blur()">查询工单</a>
         <a href="/exploration_man" target="mainFrame" onFocus="this.blur()">勘探员工信息</a>
         <a href="/exploration_Add" target="mainFrame" onFocus="this.blur()">勘探信息添加</a>
       </div>
-      <div>
+      <div id="audit" style="display: none">
         <span>审核（核保）</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
         <a href="/analyze_ktOrder" target="mainFrame" onFocus="this.blur()">分析订单</a>
         <a href="/verify" target="mainFrame" onFocus="this.blur()">审核核对</a>
       </div>
-       <div>
+       <div id="boss" style="display: none">
         <span>超级管理员</span>
         <a href="main.html" target="mainFrame" onFocus="this.blur()">后台首页</a>
         <a href="/insureMan" target="mainFrame" onFocus="this.blur()">查询投保人信息</a>

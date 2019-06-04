@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.car_insurance.mapper.AccountMapper">
+    <select id="findAccountByName" parameterType="String" resultType="com.car_insurance.entity.AccountExample">
+        SELECT account_id,account_name,account_password
+        FROM account
+        WHERE account_name=#{value}
+    </select>
+
+
+    <select id="getPermissions" resultType="String" parameterType="String">
+        SELECT li.limits_name
+        FROM `account` ac,`role` ro,`employee_role` er,`limits` li,`rolelimits` rl
+        WHERE ac.account_id=er.account_id AND er.role_id=ro.role_id AND rl.role_id=ro.role_id AND rl.limits_id=li.limits_id
+        AND ac.account_name=#{value}
+    </select>
+
+    <select id="getRoles" parameterType="String" resultType="String">
+        SELECT   ro.`role_name`
+        FROM 	`account` ac,`role` ro,`employee_role` er,`limits` li,`rolelimits` rl
+        WHERE    ac.account_id=er.account_id AND er.role_id=ro.role_id AND rl.role_id=ro.role_id AND rl.limits_id=li.limits_id
+        AND      ac.account_name=#{value} group by ro.`role_name`
+    </select>
+
+</mapper>
